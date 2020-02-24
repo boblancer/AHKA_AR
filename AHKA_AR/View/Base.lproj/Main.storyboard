@@ -40,10 +40,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="138" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dc-cK-gXF">
-                                                        <rect key="frame" x="54" y="5" width="30" height="25"/>
+                                                        <rect key="frame" x="59" y="7.6666666666666288" width="20" height="20"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="25" id="Jo1-Ix-ypz"/>
-                                                            <constraint firstAttribute="width" constant="30" id="SZj-e3-HaU"/>
+                                                            <constraint firstAttribute="height" constant="20" id="Jo1-Ix-ypz"/>
+                                                            <constraint firstAttribute="width" constant="20" id="SZj-e3-HaU"/>
                                                         </constraints>
                                                         <state key="normal" image="icon_?"/>
                                                     </button>
@@ -57,9 +57,9 @@
                                                 <rect key="frame" x="138" y="0.0" width="138" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTR-Yb-DtM">
-                                                        <rect key="frame" x="39" y="-10" width="60" height="35"/>
+                                                        <rect key="frame" x="44" y="-10" width="50" height="35"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="60" id="gF7-2O-WGs"/>
+                                                            <constraint firstAttribute="width" constant="50" id="gF7-2O-WGs"/>
                                                             <constraint firstAttribute="height" constant="35" id="j6Q-s9-DaS"/>
                                                         </constraints>
                                                         <state key="normal" image="icon_cam2"/>
@@ -75,10 +75,10 @@
                                                 <rect key="frame" x="276" y="0.0" width="138" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvW-kX-VlJ">
-                                                        <rect key="frame" x="51.666666666666686" y="2.6666666666666288" width="35" height="30"/>
+                                                        <rect key="frame" x="54" y="5" width="30" height="25"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="Gd0-Hh-O9i"/>
-                                                            <constraint firstAttribute="width" constant="35" id="ryi-Wo-FvH"/>
+                                                            <constraint firstAttribute="height" constant="25" id="Gd0-Hh-O9i"/>
+                                                            <constraint firstAttribute="width" constant="30" id="ryi-Wo-FvH"/>
                                                         </constraints>
                                                         <state key="normal" image="icon_album"/>
                                                     </button>
