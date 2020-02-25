@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f3B-Hh-uUN">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="f3B-Hh-uUN" customClass="MapController" customModule="AHKA_AR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B36-ck-HNs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yY2-6b-lwq">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="841"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="757"/>
                                 <color key="backgroundColor" red="0.37647330759999997" green="0.37646564840000002" blue="0.37647080420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lTZ-KR-K91">
                                     <size key="itemSize" width="50" height="50"/>
@@ -28,19 +28,19 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uf4-9t-zRQ">
-                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="732" width="375" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="base" translatesAutoresizingMaskIntoConstraints="NO" id="bD4-c5-D2R">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Mq7-Qe-dV8">
-                                        <rect key="frame" x="0.0" y="35" width="414" height="35"/>
+                                        <rect key="frame" x="0.0" y="35" width="375" height="35"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NS-gC-fSm">
-                                                <rect key="frame" x="0.0" y="0.0" width="138" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dc-cK-gXF">
-                                                        <rect key="frame" x="59" y="7.6666666666666288" width="20" height="20"/>
+                                                        <rect key="frame" x="52.666666666666664" y="7.6666666666666288" width="19.999999999999993" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="Jo1-Ix-ypz"/>
                                                             <constraint firstAttribute="width" constant="20" id="SZj-e3-HaU"/>
@@ -54,10 +54,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGW-eh-sBw">
-                                                <rect key="frame" x="138" y="0.0" width="138" height="35"/>
+                                                <rect key="frame" x="125" y="0.0" width="125" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTR-Yb-DtM">
-                                                        <rect key="frame" x="44" y="-10" width="50" height="35"/>
+                                                        <rect key="frame" x="37.666666666666657" y="-10" width="50" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="gF7-2O-WGs"/>
                                                             <constraint firstAttribute="height" constant="35" id="j6Q-s9-DaS"/>
@@ -72,10 +72,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHy-yh-Ksd">
-                                                <rect key="frame" x="276" y="0.0" width="138" height="35"/>
+                                                <rect key="frame" x="250" y="0.0" width="125" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvW-kX-VlJ">
-                                                        <rect key="frame" x="54" y="5" width="30" height="25"/>
+                                                        <rect key="frame" x="47.666666666666686" y="5" width="30" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="Gd0-Hh-O9i"/>
                                                             <constraint firstAttribute="width" constant="30" id="ryi-Wo-FvH"/>
@@ -129,6 +129,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QVv-qt-DVb"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="yY2-6b-lwq" id="dZh-gb-qSy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jqj-W8-6iX" sceneMemberID="firstResponder"/>
             </objects>

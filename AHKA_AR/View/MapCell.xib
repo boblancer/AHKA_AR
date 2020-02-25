@@ -9,51 +9,69 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MapCell" id="uwq-j0-wqF" customClass="CollectionViewCell" customModule="scrollViewTest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="1991" height="1169"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MapCell" id="uwq-j0-wqF" customClass="MapCell" customModule="AHKA_AR" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1796" height="1045"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="1991" height="1169"/>
+                <rect key="frame" x="0.0" y="0.0" width="1796" height="1045"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="2" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-zX-osZ">
-                        <rect key="frame" x="0.0" y="0.0" width="1991" height="1169"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1796" height="1045"/>
                         <subviews>
                             <view tag="5" contentMode="TopLeft" translatesAutoresizingMaskIntoConstraints="NO" id="cZe-kv-AVH">
-                                <rect key="frame" x="0.0" y="0.0" width="1795" height="1038"/>
+                                <rect key="frame" x="0.0" y="0.0" width="3590" height="2076"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="D0d-aJ-cIE">
-                                        <rect key="frame" x="0.0" y="0.0" width="1795" height="1038"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="3590" height="2076"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jo7-CN-qDP">
-                                        <rect key="frame" x="1649" y="135" width="87" height="88"/>
+                                        <rect key="frame" x="1641" y="136" width="87" height="88"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pin-45"/>
+                                        <connections>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="kAv-nC-TyA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btw-NU-ZEK">
                                         <rect key="frame" x="1134" y="344" width="131" height="116"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pin-43"/>
+                                        <connections>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="DPB-c3-YkF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBx-6d-MOb">
                                         <rect key="frame" x="352" y="879" width="223" height="92"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pin-41"/>
+                                        <connections>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="Alv-xX-hag"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlW-aR-8tj">
-                                        <rect key="frame" x="441" y="499" width="71" height="90"/>
+                                        <rect key="frame" x="431" y="497" width="71" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pin-39"/>
+                                        <connections>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="8n6-jl-k5W"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r21-DR-A0G">
                                         <rect key="frame" x="965" y="330" width="168" height="126"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pin-37"/>
+                                        <connections>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="nnf-Er-MfC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJe-9H-0yY">
                                         <rect key="frame" x="395" y="346" width="188" height="93"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pin-35"/>
+                                        <connections>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="4hP-p4-a11"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xy-zY-6ad">
                                         <rect key="frame" x="283" y="323" width="122" height="21"/>
@@ -74,31 +92,50 @@
                                         <rect key="frame" x="540" y="152" width="145" height="108"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pin-22"/>
+                                        <connections>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="gNP-9z-PDC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCd-dC-yfP">
                                         <rect key="frame" x="851" y="749" width="147" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pin-24"/>
+                                        <connections>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="Spl-OY-s3O"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPr-Bm-V4V">
                                         <rect key="frame" x="725" y="169" width="71" height="112"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pin-30"/>
+                                        <connections>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="Uep-2D-07h"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sA3-xX-UiF">
                                         <rect key="frame" x="433" y="217" width="94" height="105"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pin-28"/>
+                                        <connections>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="MmU-Ue-t2X"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGh-UU-uir">
                                         <rect key="frame" x="1072" y="76" width="127" height="126"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="pin-33"/>
+                                        <connections>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="mh0-vQ-2Ss"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sha-7b-c8N">
                                         <rect key="frame" x="1482" y="68" width="297" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="skywalk"/>
                                         <state key="normal" image="pin-26"/>
+                                        <connections>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="NeD-Hh-HpZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaY-sc-8qi">
                                         <rect key="frame" x="554" y="695" width="208" height="99"/>
@@ -133,8 +170,28 @@
                 <constraint firstItem="9cs-zX-osZ" firstAttribute="leading" secondItem="uwq-j0-wqF" secondAttribute="leading" id="jP1-9E-Asz"/>
                 <constraint firstAttribute="bottom" secondItem="9cs-zX-osZ" secondAttribute="bottom" id="vpq-y2-6Zl"/>
             </constraints>
-            <size key="customSize" width="1991" height="1169"/>
-            <point key="canvasLocation" x="919.56521739130437" y="134.93303571428569"/>
+            <size key="customSize" width="1796" height="1045"/>
+            <connections>
+                <outlet property="chiefHub" destination="r21-DR-A0G" id="eQT-hq-D8K"/>
+                <outlet property="coffee" destination="FGh-UU-uir" id="49D-BR-Q7H"/>
+                <outlet property="coffeeRoasting" destination="qBx-6d-MOb" id="MfW-i0-VGC"/>
+                <outlet property="cuturalCenter" destination="c9P-pY-wrM" id="uyA-3F-Ufl"/>
+                <outlet property="ghostDoor" destination="lPr-Bm-V4V" id="eea-qS-GJG"/>
+                <outlet property="holyWell" destination="tCd-dC-yfP" id="zUO-w6-8IQ"/>
+                <outlet property="mapView" destination="D0d-aJ-cIE" id="gKw-xZ-rrA"/>
+                <outlet property="noName1" destination="jo7-CN-qDP" id="C8I-FU-x1N"/>
+                <outlet property="noName2" destination="LlW-aR-8tj" id="582-Bb-lta"/>
+                <outlet property="saoChingcha" destination="sA3-xX-UiF" id="Bah-q4-rbm"/>
+                <outlet property="scrollView" destination="9cs-zX-osZ" id="JgR-zh-VM8"/>
+                <outlet property="skywalk" destination="Sha-7b-c8N" id="53a-uh-DTD"/>
+                <outlet property="text1" destination="9xy-zY-6ad" id="Hyj-ha-mFl"/>
+                <outlet property="text2" destination="Pc3-Mq-F5e" id="QG3-to-GlP"/>
+                <outlet property="text3" destination="WPQ-oT-WKz" id="DDp-QZ-7xU"/>
+                <outlet property="text4" destination="iaY-sc-8qi" id="d88-cX-hOt"/>
+                <outlet property="visitorCenter" destination="HJe-9H-0yY" id="5dn-Vw-tSb"/>
+                <outlet property="voodooHub" destination="Btw-NU-ZEK" id="T24-ux-w5D"/>
+            </connections>
+            <point key="canvasLocation" x="778.26086956521749" y="93.415178571428569"/>
         </collectionViewCell>
     </objects>
     <resources>
