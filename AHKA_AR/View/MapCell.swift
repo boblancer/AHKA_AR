@@ -7,83 +7,78 @@
 //
 
 import UIKit
+import Foundation
+
+protocol PinDelegate {
+    func pinIsPressed(_ mapCell: MapCell, _ imageTitle : String)
+}
 
 class MapCell: UICollectionViewCell, UIScrollViewDelegate {
     
+    var delegate: PinDelegate?
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mapView: UIImageView!
-    @IBOutlet weak var noName1: UIButton!
-    @IBOutlet weak var voodooHub: UIButton!
-    @IBOutlet weak var coffeeRoasting: UIButton!
-    @IBOutlet weak var noName2: UIButton!
-    @IBOutlet weak var chiefHub: UIButton!
-    @IBOutlet weak var visitorCenter: UIButton!
     @IBOutlet weak var cuturalCenter: UIButton!
-    @IBOutlet weak var holyWell: UIButton!
-    @IBOutlet weak var ghostDoor: UIButton!
     @IBOutlet weak var saoChingcha: UIButton!
+    @IBOutlet weak var visitorCenter: UIButton!
+    @IBOutlet weak var ghostDoor: UIButton!
+    @IBOutlet weak var noName1: UIButton!
+    @IBOutlet weak var coffeeRoasting: UIButton!
+    @IBOutlet weak var holyWell: UIButton!
+    @IBOutlet weak var voodooHub: UIButton!
+    @IBOutlet weak var chiefHub: UIButton!
     @IBOutlet weak var coffee: UIButton!
     @IBOutlet weak var skywalk: UIButton!
+    @IBOutlet weak var noName2: UIButton!
     
+
+    
+    // resize bottom center
     @IBOutlet weak var text1: UIButton!
     @IBOutlet weak var text2: UIButton!
+    @IBOutlet weak var saoChingchaText: UIButton!
+    @IBOutlet weak var cuturalCenterText: UIButton!
+    @IBOutlet weak var ghostDoorText: UIButton!
+    @IBOutlet weak var coffeeText: UIButton!
+    @IBOutlet weak var voodooHubText: UIButton!
+    @IBOutlet weak var chiefHubText: UIButton!
+    @IBOutlet weak var holyWellText: UIButton!
+    @IBOutlet weak var coffeeRoastingText: UIButton!
+    @IBOutlet weak var skywalkText: UIButton!
+    
+    // resize left center
     @IBOutlet weak var text3: UIButton!
     @IBOutlet weak var text4: UIButton!
+    @IBOutlet weak var visitorCenterText: UIButton!
     
+    var textList: [UIButton] = []
+    var textList2: [UIButton] = []
     var pinList: [UIButton] = []
-    var pinList2: [UIButton] = []
-    var pinPosition: [UIButton: [CGFloat]] = [:]
+    var textPosition: [UIButton: [CGFloat]] = [:]
     
     override func awakeFromNib() {
         super.awakeFromNib()
         scrollView.delegate = self
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 2.0
-        setupPinPosition()
+        initPin()
     }
     
-    func setupPinPosition(){        
-        pinList = [noName1, voodooHub, noName2, chiefHub, cuturalCenter, holyWell, ghostDoor, saoChingcha, coffee, text1, text2]
-        pinList2 = [coffeeRoasting, visitorCenter, skywalk, text3, text4]
-    }
-    
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return self.scrollView.viewWithTag(5)
-    }
-    
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        //updatePinPosition()
-    }
-    
-    func updatePinPosition(){
-        //let heightRatio = scrollView.bounds.size.height / 1038
+    func initPin(){
+        pinList = [cuturalCenter, saoChingcha, visitorCenter, ghostDoor, noName1, coffeeRoasting, holyWell, voodooHub, chiefHub, coffee, skywalk, noName2]
         
-        for pin in pinList{
-            let newWidth = self.pinPosition[pin]![0] / scrollView.zoomScale
-            let newHeight = self.pinPosition[pin]![1] / scrollView.zoomScale
-            let difWidth = self.pinPosition[pin]![0] - newWidth
-            let difHeight = self.pinPosition[pin]![1] - newHeight
-            let newX = pinPosition[pin]![2] + (difWidth / 2)
-            let newY = pinPosition[pin]![3] + difHeight
-            
-            pin.frame = CGRect(x: newX, y: newY, width: newWidth, height: newHeight)
-        }
+        textList = [text1, text2, saoChingchaText, cuturalCenterText, ghostDoorText, coffeeText, voodooHubText, chiefHubText, holyWellText, coffeeRoastingText, visitorCenterText]
         
-        for pin in pinList2{
-            let newWidth = self.pinPosition[pin]![0] / scrollView.zoomScale
-            let newHeight = self.pinPosition[pin]![1] / scrollView.zoomScale
-            let difWidth = self.pinPosition[pin]![0] - newWidth
-            let difHeight = self.pinPosition[pin]![1] - newHeight
-            let newX = pinPosition[pin]![2]
-            let newY = pinPosition[pin]![3] 
-            
-            pin.frame = CGRect(x: newX, y: newY, width: newWidth, height: newHeight)
-        }
-        
+        textList2 = [text3, text4, skywalkText]
         
     }
     
-    
+    @IBAction func pinPressed(_ sender: UIButton) {
+        let imageTitle = sender.accessibilityIdentifier! + "Info"
+        self.delegate?.pinIsPressed(self, imageTitle)
+        
+    }
     
 }
 
@@ -91,9 +86,42 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
 
 extension MapCell{
     
-    @IBAction func pinPressed(_ sender: UIButton) {
-        print(sender.accessibilityIdentifier)
-    }
+       
+       func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+           return self.scrollView.viewWithTag(5)
+       }
+       
+       func scrollViewDidZoom(_ scrollView: UIScrollView) {
+           updatePinPosition()
+       }
+       
+       func updatePinPosition(){
+    
+           
+           for text in textList{
+               let newWidth = self.textPosition[text]![0] / scrollView.zoomScale
+               let newHeight = self.textPosition[text]![1] / scrollView.zoomScale
+               let difWidth = self.textPosition[text]![0] - newWidth
+               let difHeight = self.textPosition[text]![1] - newHeight
+               let newX = textPosition[text]![2] + (difWidth / 2)
+               let newY = textPosition[text]![3] + (difHeight / 2)
+               
+               text.frame = CGRect(x: newX, y: newY, width: newWidth, height: newHeight)
+           }
+           
+           for text in textList2{
+               let newWidth = self.textPosition[text]![0] / scrollView.zoomScale
+               let newHeight = self.textPosition[text]![1] / scrollView.zoomScale
+               let difWidth = self.textPosition[text]![0] - newWidth
+               let difHeight = self.textPosition[text]![1] - newHeight
+               let newX = textPosition[text]![2] + (difWidth / 5)
+               let newY = textPosition[text]![3] + (difHeight / 2)
+               
+               text.frame = CGRect(x: newX, y: newY, width: newWidth, height: newHeight)
+           }
+           
+           
+       }
     
 }
 
