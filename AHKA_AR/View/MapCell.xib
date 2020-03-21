@@ -31,6 +31,8 @@
                                         <accessibility key="accessibilityConfiguration" identifier="visitorCenter"/>
                                         <state key="normal" image="visitorCenter"/>
                                         <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="089-ZZ-L63"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="cLP-TG-3jy"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="Pga-hG-cov"/>
                                         </connections>
                                     </button>
@@ -40,6 +42,8 @@
                                         <accessibility key="accessibilityConfiguration" identifier="voodooHub"/>
                                         <state key="normal" image="voodooHub"/>
                                         <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="OIH-J8-MEH"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="Qbe-4e-PTr"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="c6B-Sq-N87"/>
                                         </connections>
                                     </button>
@@ -49,6 +53,8 @@
                                         <accessibility key="accessibilityConfiguration" identifier="skywalk"/>
                                         <state key="normal" image="skywalk"/>
                                         <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="nEg-k4-Efo"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="Frn-qy-maM"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="mbO-cm-gI4"/>
                                         </connections>
                                     </button>
@@ -58,6 +64,8 @@
                                         <accessibility key="accessibilityConfiguration" identifier="saoChingcha"/>
                                         <state key="normal" image="saoChingcha"/>
                                         <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="MUO-Xd-9af"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="fdj-20-zgQ"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="qHK-qC-8yb"/>
                                         </connections>
                                     </button>
@@ -67,6 +75,8 @@
                                         <accessibility key="accessibilityConfiguration" identifier="noName2"/>
                                         <state key="normal" image="noName2"/>
                                         <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="34R-Nb-2bL"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="Mfe-Nk-upp"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="yWI-hG-dI0"/>
                                         </connections>
                                     </button>
@@ -76,6 +86,8 @@
                                         <accessibility key="accessibilityConfiguration" identifier="noName1"/>
                                         <state key="normal" image="noName1"/>
                                         <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="gEd-fw-L4v"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="Cc1-Vn-xHn"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="qTz-0g-QvB"/>
                                         </connections>
                                     </button>
@@ -85,6 +97,8 @@
                                         <accessibility key="accessibilityConfiguration" identifier="holyWell"/>
                                         <state key="normal" image="holyWell"/>
                                         <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="I3g-fF-mrt"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="OBo-nN-If7"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="7IF-6C-Qpv"/>
                                         </connections>
                                     </button>
@@ -94,6 +108,8 @@
                                         <accessibility key="accessibilityConfiguration" identifier="coffeeRoasting"/>
                                         <state key="normal" image="coffeeRoasting"/>
                                         <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="Ayg-VY-PkT"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="js7-Fp-UhE"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="8Xb-xu-Ogb"/>
                                         </connections>
                                     </button>
@@ -103,6 +119,8 @@
                                         <accessibility key="accessibilityConfiguration" identifier="cuturalCenter"/>
                                         <state key="normal" image="cuturalCenter"/>
                                         <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="e15-y0-8Gh"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="7oi-aV-51B"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="hSV-KQ-dGw"/>
                                         </connections>
                                     </button>
@@ -112,6 +130,8 @@
                                         <accessibility key="accessibilityConfiguration" identifier="chiefHub"/>
                                         <state key="normal" image="chiefHub"/>
                                         <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="iOa-cy-pa1"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="eqW-7y-Fjc"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="reG-T8-yeK"/>
                                         </connections>
                                     </button>
@@ -121,6 +141,8 @@
                                         <accessibility key="accessibilityConfiguration" identifier="coffee"/>
                                         <state key="normal" image="coffee"/>
                                         <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="HDq-gX-zFC"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="3sY-mf-PD5"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="qaE-0q-jIw"/>
                                         </connections>
                                     </button>
@@ -130,6 +152,8 @@
                                         <accessibility key="accessibilityConfiguration" identifier="ghostDoor"/>
                                         <state key="normal" image="ghostDoor"/>
                                         <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="4k8-Yk-62O"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="A9b-Wa-IQg"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="U5K-BD-eJs"/>
                                         </connections>
                                     </button>

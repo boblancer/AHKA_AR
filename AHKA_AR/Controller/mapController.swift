@@ -78,7 +78,7 @@ class MapController: UIViewController, PinDelegate{
         popup.isHidden = false
 
         clearPopup()
-        pageControl.currentPage = 0
+//        pageControl.currentPage = 0
         pageControl.numberOfPages = 4
         pageControl.isHidden = false
         map.mapView.alpha = 0.5

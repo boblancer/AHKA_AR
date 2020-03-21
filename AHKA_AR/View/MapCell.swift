@@ -57,6 +57,8 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
     var pinList: [UIButton] = []
     var textPosition: [UIButton: [CGFloat]] = [:]
     
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         scrollView.delegate = self
@@ -78,7 +80,33 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
         let imageTitle = sender.accessibilityIdentifier! + "Info"
         self.delegate?.pinIsPressed(self, imageTitle)
         
+        
+        let width = sender.frame.width * 0.8333333
+        let height = sender.frame.height * 0.8333333
+        let x = sender.frame.origin.x + (width * 0.1)
+        let y = sender.frame.origin.y + (height * 0.2)
+        sender.frame = CGRect(x: x , y: y, width: width, height: height)
+
     }
+    @IBAction func pinIsPressing(_ sender: UIButton) {
+        let difX = sender.frame.width * 0.1
+        let difY = sender.frame.height * 0.2
+        let x = sender.frame.origin.x - difX
+        let y = sender.frame.origin.y - difY
+        let width = sender.frame.width * 1.2
+        let height = sender.frame.height * 1.2
+        sender.frame = CGRect(x: x , y: y, width: width, height: height)
+    }
+    
+
+    @IBAction func pinIsDragedExit(_ sender: UIButton) {
+        let width = sender.frame.width * 0.8333333
+        let height = sender.frame.height * 0.8333333
+        let x = sender.frame.origin.x + (width * 0.1)
+        let y = sender.frame.origin.y + (height * 0.2)
+        sender.frame = CGRect(x: x , y: y, width: width, height: height)
+    }
+    
     
 }
 
