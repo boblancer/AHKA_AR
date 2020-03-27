@@ -7,19 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F51F5BD824268CDA00D7EBD5 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51F5BD724268CDA00D7EBD5 /* PersistenceService.swift */; };
+		F51F5BDA2426C13A00D7EBD5 /* CustomPhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51F5BD92426C13A00D7EBD5 /* CustomPhotoAlbum.swift */; };
+		F52A9C3623FDC4ED00AD96EB /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52A9C3523FDC4ED00AD96EB /* AlbumViewController.swift */; };
+		F52B2B8423EF3BB30017EEA6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52B2B8323EF3BB30017EEA6 /* HomeViewController.swift */; };
+		F5E004DE2406F0CE0034B35D /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E004DD2406F0CE0034B35D /* Character.swift */; };
 		F5E6164C23E5C78A009893D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E6164B23E5C78A009893D3 /* AppDelegate.swift */; };
 		F5E6164E23E5C78A009893D3 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E6164D23E5C78A009893D3 /* art.scnassets */; };
-		F5E6165023E5C78A009893D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E6164F23E5C78A009893D3 /* ViewController.swift */; };
+		F5E6165023E5C78A009893D3 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E6164F23E5C78A009893D3 /* ARViewController.swift */; };
 		F5E6165323E5C78A009893D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E6165123E5C78A009893D3 /* Main.storyboard */; };
 		F5E6165523E5C78E009893D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E6165423E5C78E009893D3 /* Assets.xcassets */; };
 		F5E6165823E5C78E009893D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E6165623E5C78E009893D3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F51F5BD724268CDA00D7EBD5 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		F51F5BD92426C13A00D7EBD5 /* CustomPhotoAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhotoAlbum.swift; sourceTree = "<group>"; };
+		F52A9C3523FDC4ED00AD96EB /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		F52B2B8323EF3BB30017EEA6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F5E004DD2406F0CE0034B35D /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		F5E6164823E5C78A009893D3 /* AHKA_AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AHKA_AR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E6164B23E5C78A009893D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5E6164D23E5C78A009893D3 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		F5E6164F23E5C78A009893D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F5E6164F23E5C78A009893D3 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		F5E6165223E5C78A009893D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5E6165423E5C78E009893D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5E6165723E5C78E009893D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +47,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F52B2B8223EF3B460017EEA6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F5E6164F23E5C78A009893D3 /* ARViewController.swift */,
+				F5E6164B23E5C78A009893D3 /* AppDelegate.swift */,
+				F52B2B8323EF3BB30017EEA6 /* HomeViewController.swift */,
+				F52A9C3523FDC4ED00AD96EB /* AlbumViewController.swift */,
+				F51F5BD724268CDA00D7EBD5 /* PersistenceService.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F5E004DC2406F09C0034B35D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5E004DD2406F0CE0034B35D /* Character.swift */,
+				F51F5BD92426C13A00D7EBD5 /* CustomPhotoAlbum.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F5E6163F23E5C78A009893D3 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +87,9 @@
 		F5E6164A23E5C78A009893D3 /* AHKA_AR */ = {
 			isa = PBXGroup;
 			children = (
-				F5E6164B23E5C78A009893D3 /* AppDelegate.swift */,
+				F5E004DC2406F09C0034B35D /* Models */,
+				F52B2B8223EF3B460017EEA6 /* Controllers */,
 				F5E6164D23E5C78A009893D3 /* art.scnassets */,
-				F5E6164F23E5C78A009893D3 /* ViewController.swift */,
 				F5E6165123E5C78A009893D3 /* Main.storyboard */,
 				F5E6165423E5C78E009893D3 /* Assets.xcassets */,
 				F5E6165623E5C78E009893D3 /* LaunchScreen.storyboard */,
@@ -139,8 +170,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5E6165023E5C78A009893D3 /* ViewController.swift in Sources */,
+				F52A9C3623FDC4ED00AD96EB /* AlbumViewController.swift in Sources */,
+				F51F5BD824268CDA00D7EBD5 /* PersistenceService.swift in Sources */,
+				F51F5BDA2426C13A00D7EBD5 /* CustomPhotoAlbum.swift in Sources */,
+				F5E6165023E5C78A009893D3 /* ARViewController.swift in Sources */,
+				F5E004DE2406F0CE0034B35D /* Character.swift in Sources */,
 				F5E6164C23E5C78A009893D3 /* AppDelegate.swift in Sources */,
+				F52B2B8423EF3BB30017EEA6 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
