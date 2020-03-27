@@ -10,23 +10,24 @@ import UIKit
 import Photos
 
 class AlbumViewController: UICollectionViewController,PHPhotoLibraryChangeObserver{
-    func photoLibraryDidChange(_ changeInstance: PHChange) {
-        print("changed")
-    }
-    
+
     
     var imageArr = [UIImage]()    
     var customPhotoAlbum  = CustomPhotoAlbum()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         getPhotos();
         PHPhotoLibrary.shared().register(self)
         collectionView.delegate = self
     
     
         // Do any additional setup after loading the view.
+    }
+    
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        print("changed")
+        getPhotos()
     }
     func getPhotos() {
         
@@ -89,15 +90,15 @@ class AlbumViewController: UICollectionViewController,PHPhotoLibraryChangeObserv
 
 extension AlbumViewController: UICollectionViewDelegateFlowLayout  {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.width - 10) / 3
+        let width = (collectionView.frame.width - 9) / 3
         
         return CGSize(width: width, height: width)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 0.0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
+        return 5
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero

@@ -35,18 +35,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     }
     
     
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
-        } else {
-            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,7 +75,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
         let imageAnchor = (anchor is ARImageAnchor) ? anchor as? ARImageAnchor : nil
-        if (imageAnchor != nil) && !(self.persistetService.GetBooleanValueForKey(key: imageAnchor!.referenceImage.name!)) {
+        if (imageAnchor != nil) && !(self.persistetService.getBooleanValueForKey(key: imageAnchor!.referenceImage.name!)) {
              DispatchQueue.global().async {
 //            let plane = SCNPlane(width: 10, height: 10)
 //            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
@@ -98,7 +86,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
                 let characterScn = SCNScene(named: "art.scnassets/Characters/\(characterIndex).scn")
                 let characterNode = characterScn?.rootNode
                 node.addChildNode(characterNode!)
-                self.persistetService.SaveBoolean(key: String(characterIndex), value: true)
+                self.persistetService.saveBoolean(key: String(characterIndex), value: true)
             }
         }
         return node

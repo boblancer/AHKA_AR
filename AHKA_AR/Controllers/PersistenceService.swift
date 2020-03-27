@@ -12,11 +12,11 @@ import CoreData
 class PersistentService{
     var defaults = UserDefaults.standard
 
-    func SaveBoolean(key: String, value: Bool) {
+    func saveBoolean(key: String, value: Bool) {
         defaults.set(value, forKey: key)
         print("\(value) is save for \(key)")
     }
-    func GetBooleanValueForKey(key: String) -> Bool{
+    func getBooleanValueForKey(key: String) -> Bool{
         let found = defaults.bool(forKey: key)
         return found
     }
