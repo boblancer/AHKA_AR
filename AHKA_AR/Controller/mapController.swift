@@ -16,7 +16,6 @@ class MapController: UIViewController, PinDelegate{
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var popup: UIView!
     
-    let infoImages: [UIImage] = [#imageLiteral(resourceName: "voodooHubInfo"), #imageLiteral(resourceName: "voodooHubInfo"), #imageLiteral(resourceName: "voodooHubInfo"), #imageLiteral(resourceName: "voodooHubInfo"), #imageLiteral(resourceName: "voodooHubInfo"), #imageLiteral(resourceName: "voodooHubInfo"), #imageLiteral(resourceName: "voodooHubInfo"), #imageLiteral(resourceName: "voodooHubInfo"), #imageLiteral(resourceName: "voodooHubInfo"), #imageLiteral(resourceName: "voodooHubInfo"), #imageLiteral(resourceName: "voodooHubInfo"), #imageLiteral(resourceName: "voodooHubInfo")]
     let infoSlide:HowToSlide = Bundle.main.loadNibNamed("HowToSlide", owner: self, options: nil)?.first as! HowToSlide
     var howToSlides: [HowToSlide] = []
     var map = MapCell()
