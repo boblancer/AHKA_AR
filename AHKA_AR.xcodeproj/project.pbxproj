@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F51F5BD824268CDA00D7EBD5 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51F5BD724268CDA00D7EBD5 /* PersistenceService.swift */; };
+		F51F5BDA2426C13A00D7EBD5 /* CustomPhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51F5BD92426C13A00D7EBD5 /* CustomPhotoAlbum.swift */; };
 		F52A9C3623FDC4ED00AD96EB /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52A9C3523FDC4ED00AD96EB /* AlbumViewController.swift */; };
 		F52B2B8423EF3BB30017EEA6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52B2B8323EF3BB30017EEA6 /* HomeViewController.swift */; };
 		F5E004DE2406F0CE0034B35D /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E004DD2406F0CE0034B35D /* Character.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F51F5BD724268CDA00D7EBD5 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		F51F5BD92426C13A00D7EBD5 /* CustomPhotoAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhotoAlbum.swift; sourceTree = "<group>"; };
 		F52A9C3523FDC4ED00AD96EB /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		F52B2B8323EF3BB30017EEA6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F5E004DD2406F0CE0034B35D /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -50,6 +54,7 @@
 				F5E6164B23E5C78A009893D3 /* AppDelegate.swift */,
 				F52B2B8323EF3BB30017EEA6 /* HomeViewController.swift */,
 				F52A9C3523FDC4ED00AD96EB /* AlbumViewController.swift */,
+				F51F5BD724268CDA00D7EBD5 /* PersistenceService.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -58,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				F5E004DD2406F0CE0034B35D /* Character.swift */,
+				F51F5BD92426C13A00D7EBD5 /* CustomPhotoAlbum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F52A9C3623FDC4ED00AD96EB /* AlbumViewController.swift in Sources */,
+				F51F5BD824268CDA00D7EBD5 /* PersistenceService.swift in Sources */,
+				F51F5BDA2426C13A00D7EBD5 /* CustomPhotoAlbum.swift in Sources */,
 				F5E6165023E5C78A009893D3 /* ARViewController.swift in Sources */,
 				F5E004DE2406F0CE0034B35D /* Character.swift in Sources */,
 				F5E6164C23E5C78A009893D3 /* AppDelegate.swift in Sources */,

@@ -16,13 +16,22 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     @IBOutlet var sceneView: ARSCNView!
     var image: UIImage!
     var mainScene: SCNScene!
-    var modelDidAppear: Bool = false
-    var characters = [SCNScene?](repeating: nil, count: 12)
+    var persistetService = PersistentService()
+    var customPhotoAlbum = CustomPhotoAlbum()
 
 
     @IBAction func snapshotButtonPressed(_ sender: AnyObject){
         image = sceneView.snapshot()
-        UIImageWriteToSavedPhotosAlbum(image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        let error = self.customPhotoAlbum.saveImage(image: image)
+        if error{
+            let ac = UIAlertController(title: "Save error", message: "fail to save", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
     }
     
     
@@ -51,18 +60,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     }
 
     func setUpScene(){
-        
-        modelDidAppear = false
         let mainScene = SCNScene()
-//        let node = SCNScene(named: "art.scnassets/Pig2.scn")?.rootNode
-//        node?.scale = SCNVector3Make(10, 10, 10)
-//        mainScene.rootNode.addChildNode(node ?? SCNNode())
-//        mainScene.rootNode.scale = SCNVector3Make(0.01, 0.01, 0.01)
         sceneView.scene = mainScene
-        for i in 0...11{
-            characters[i] = SCNScene(named: "art.scnassets/ship.scn")
-        }
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,7 +76,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
         }
         // Run the view's session
         sceneView.session.run(configuration)
-        modelDidAppear = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -88,32 +86,26 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     }
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
-        
-        if anchor is ARImageAnchor && !modelDidAppear {
+        let imageAnchor = (anchor is ARImageAnchor) ? anchor as? ARImageAnchor : nil
+        if (imageAnchor != nil) && !(self.persistetService.GetBooleanValueForKey(key: imageAnchor!.referenceImage.name!)) {
              DispatchQueue.global().async {
 //            let plane = SCNPlane(width: 10, height: 10)
 //            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
-//            let planeNode = SCNNode(geometry: plane)
-                let jetScn = SCNScene(named: "art.scnassets/ship.scn")
-                let jetNode = jetScn?.rootNode
-                node.addChildNode((jetNode ?? nil)!)
-                self.modelDidAppear = true
-                print("image detected")
+//            let planeNode = SCNNode(geometry: plane
+                let s = (imageAnchor!.referenceImage.name)
+                let characterIndex = s![(s!.index(s!.startIndex, offsetBy: 10)..<s!.endIndex)]
+                print("the index is ", characterIndex, ".scn")
+                let characterScn = SCNScene(named: "art.scnassets/Characters/\(characterIndex).scn")
+                let characterNode = characterScn?.rootNode
+                node.addChildNode(characterNode!)
+                self.persistetService.SaveBoolean(key: String(characterIndex), value: true)
             }
         }
         return node
     }
 
     // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create i8and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
+
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
@@ -122,6 +114,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     
     func sessionWasInterrupted(_ session: ARSession) {
         // Inform the user that the session has been interrupted, for example, by presenting an overlay
+        sceneView.session.pause()
         
     }
     
