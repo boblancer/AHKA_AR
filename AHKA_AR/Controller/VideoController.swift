@@ -34,7 +34,7 @@ class VideoController: UIViewController{
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        if defaults.bool(forKey: "First Launch") != true{
+        if defaults.bool(forKey: "First Launch") == true{
             self.performSegue(withIdentifier: "videoToMap", sender: self)
             defaults.set(true, forKey: "First Launch")
         }
