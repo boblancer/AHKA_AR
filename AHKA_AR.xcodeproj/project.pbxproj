@@ -35,11 +35,11 @@
 		C859F2F2242E8A4C00EA1A49 /* PersistenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		C859F2F8242E8C6200EA1A49 /* CustomPhotoAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPhotoAlbum.swift; sourceTree = "<group>"; };
 		C859F2F9242E8C6200EA1A49 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		C859F300242E8D5E00EA1A49 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C85FAEE324169CA30058B791 /* MapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapCell.xib; sourceTree = "<group>"; };
 		C85FAEE52416CDAD0058B791 /* HowToSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToSlide.swift; sourceTree = "<group>"; };
 		C8A4E38924267C5C0046B03D /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
 		C8AF35022403E95D00AB6721 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		C8B5B3E2242EA8EC0083905F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5E6164823E5C78A009893D3 /* AHKA_AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AHKA_AR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E6164B23E5C78A009893D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5E6164D23E5C78A009893D3 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 				F5E6164B23E5C78A009893D3 /* AppDelegate.swift */,
 				F5E6164D23E5C78A009893D3 /* art.scnassets */,
 				F5E6165423E5C78E009893D3 /* Assets.xcassets */,
-				C859F300242E8D5E00EA1A49 /* Info.plist */,
+				C8B5B3E2242EA8EC0083905F /* Info.plist */,
 				F5E6165623E5C78E009893D3 /* LaunchScreen.storyboard */,
 			);
 			path = AHKA_AR;

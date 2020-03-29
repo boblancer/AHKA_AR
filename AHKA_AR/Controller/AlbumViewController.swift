@@ -12,7 +12,7 @@ import Photos
 class AlbumViewController: UICollectionViewController,PHPhotoLibraryChangeObserver{
 
     
-    var imageArr = [UIImage]()    
+    var imageArr = [UIImage]()
     var customPhotoAlbum  = CustomPhotoAlbum()
     
     override func viewDidLoad() {

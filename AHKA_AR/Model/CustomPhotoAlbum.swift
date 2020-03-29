@@ -51,7 +51,7 @@ class CustomPhotoAlbum {
     func fetchImages() -> PHFetchResult<PHAsset>{
         // .highQualityFormat will return better quality photos
         let fetchOptions = PHFetchOptions()
-        //        fetchOptions.predicate = NSPredicate(format: "title = %@", "K PLUS")
+//        fetchOptions.predicate = NSPredicate(format: "title = %@", CustomPhotoAlbum.albumName)
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         let results: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
         return results
@@ -61,9 +61,10 @@ class CustomPhotoAlbum {
     func saveImage(image: UIImage) -> Bool {
         
         if assetCollection == nil {
+            print("Returning true")
             return false
         }
-        
+        print("returning true")
         PHPhotoLibrary.shared().performChanges({
             let assetChangeRequest = PHAssetChangeRequest.creationRequestForAsset(from: image)
             let assetPlaceholder = assetChangeRequest.placeholderForCreatedAsset

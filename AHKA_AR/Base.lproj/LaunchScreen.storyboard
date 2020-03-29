@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,28 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AKHA EXPLORER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auN-wI-LWm">
-                                <rect key="frame" x="141.66666666666666" y="419.33333333333331" width="130.99999999999997" height="57.333333333333314"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="131" id="z4K-gb-8HQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPONSER BY XXX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vva-rb-X20">
-                                <rect key="frame" x="136.66666666666666" y="486.66666666666669" width="140.99999999999997" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="wQ5-KJ-39c">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.1686054766" green="0.1567477286" blue="0.16470682619999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="auN-wI-LWm" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="06I-8W-esT"/>
-                            <constraint firstItem="Vva-rb-X20" firstAttribute="top" secondItem="auN-wI-LWm" secondAttribute="bottom" constant="10" id="2gj-d7-oR9"/>
-                            <constraint firstItem="Vva-rb-X20" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="IIf-A6-pJa"/>
-                            <constraint firstItem="auN-wI-LWm" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eNW-gr-8PE"/>
+                            <constraint firstItem="wQ5-KJ-39c" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="2Cw-4z-d5U"/>
+                            <constraint firstAttribute="trailing" secondItem="wQ5-KJ-39c" secondAttribute="trailing" id="7KG-F9-8rY"/>
+                            <constraint firstItem="wQ5-KJ-39c" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="mMU-YI-4Ty"/>
+                            <constraint firstAttribute="bottom" secondItem="wQ5-KJ-39c" secondAttribute="bottom" id="wmV-vW-e5v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -47,4 +36,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launchScreenImage" width="3126" height="5559"/>
+    </resources>
 </document>

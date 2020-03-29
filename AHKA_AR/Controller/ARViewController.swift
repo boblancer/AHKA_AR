@@ -12,28 +12,28 @@ import ARKit
 
 class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate
 {
-
+    
     @IBOutlet var sceneView: ARSCNView!
     var image: UIImage!
     var mainScene: SCNScene!
     var persistetService = PersistentService()
     var customPhotoAlbum = CustomPhotoAlbum()
-
-
+    
+    
     @IBAction func snapshotButtonPressed(_ sender: AnyObject){
         image = sceneView.snapshot()
-        let error = self.customPhotoAlbum.saveImage(image: image)
-        if error{
-            let ac = UIAlertController(title: "Save error", message: "fail to save", preferredStyle: .alert)
+        let success = self.customPhotoAlbum.saveImage(image: image)
+        if success{
+            let ac = UIAlertController(title: "Saved!", message: "Your image has been saved to your photos.", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         } else {
-            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            let ac = UIAlertController(title: "Save error", message: "fail to save", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "REEE", style: .default))
             present(ac, animated: true)
+            
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
         setUpScene()
         
     }
-
+    
     func setUpScene(){
         let mainScene = SCNScene()
         sceneView.scene = mainScene
@@ -58,7 +58,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
         if let detectionImages = ARReferenceImage.referenceImages(inGroupNamed: "ARTarget",
-            bundle: Bundle.main){
+                                                                  bundle: Bundle.main){
             configuration.detectionImages = detectionImages
             configuration.maximumNumberOfTrackedImages = 1
         }
@@ -76,10 +76,10 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
         let node = SCNNode()
         let imageAnchor = (anchor is ARImageAnchor) ? anchor as? ARImageAnchor : nil
         if (imageAnchor != nil) && !(self.persistetService.getBooleanValueForKey(key: imageAnchor!.referenceImage.name!)) {
-             DispatchQueue.global().async {
-//            let plane = SCNPlane(width: 10, height: 10)
-//            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
-//            let planeNode = SCNNode(geometry: plane
+            DispatchQueue.global().async {
+                //            let plane = SCNPlane(width: 10, height: 10)
+                //            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
+                //            let planeNode = SCNNode(geometry: plane
                 let s = (imageAnchor!.referenceImage.name)
                 let characterIndex = s![(s!.index(s!.startIndex, offsetBy: 10)..<s!.endIndex)]
                 print("the index is ", characterIndex, ".scn")
@@ -91,9 +91,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
         }
         return node
     }
-
+    
     // MARK: - ARSCNViewDelegate
-
+    
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
@@ -102,8 +102,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     
     func sessionWasInterrupted(_ session: ARSession) {
         // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        sceneView.session.pause()
-        
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {

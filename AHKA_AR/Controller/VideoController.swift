@@ -12,6 +12,7 @@ import AVFoundation
 
 class VideoController: UIViewController{
     
+    
     let defaults = UserDefaults.standard
     var player: AVPlayer?
     var layer: AVPlayerLayer?
@@ -32,17 +33,19 @@ class VideoController: UIViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: player)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        if defaults.bool(forKey: "First Launch") == true{
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        if defaults.bool(forKey: "First Launch5") == true{
             self.performSegue(withIdentifier: "videoToMap", sender: self)
-            defaults.set(true, forKey: "First Launch")
+            defaults.set(true, forKey: "First Launch5")
         }
         else{
             video()
-            defaults.set(true, forKey: "First Launch")
+            defaults.set(true, forKey: "First Launch5")
         }
     }
+    
+    
     
     func video(){
         let videoString:String? = Bundle.main.path(forResource: "INTRO_final2", ofType: "mp4")

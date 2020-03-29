@@ -8,7 +8,6 @@
 
 import UIKit
 class MapController: UIViewController, PinDelegate{
-    
     @IBOutlet weak var bottomBar: UIView!
     @IBOutlet weak var mapView: UICollectionView!
     @IBOutlet weak var closeButton: UIButton!
@@ -17,6 +16,10 @@ class MapController: UIViewController, PinDelegate{
     @IBOutlet weak var popup: UIView!
     
     let infoSlide:HowToSlide = Bundle.main.loadNibNamed("HowToSlide", owner: self, options: nil)?.first as! HowToSlide
+    let pinKeyList = ["01" ,"02" ,"03" ,"04" ,"05" ,"06" ,"07" ,"08" ,"09" ,"10" ,"11" ,"12"]
+    let foundPinList = ["holywell" ,"skywalk" ,"coffee" ,"cuturalCenter" ,"saoChingcha","chiefHub" ,"visitorCenter" ,"ghostDoor" ,"coffeeRoasting","noName1" ,"voodooHub" ,"noName2"]
+    let defaults = UserDefaults.standard
+
     var howToSlides: [HowToSlide] = []
     var map = MapCell()
     
@@ -40,6 +43,42 @@ class MapController: UIViewController, PinDelegate{
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        var check = true
+        
+        for index in 0...11{
+            if defaults.bool(forKey: pinKeyList[index]) == true{
+                let imageTitle = foundPinList[index] + "Found"
+                map.pinList[index].imageView?.image = UIImage(named: imageTitle)
+            }
+            else{
+                check = false
+            }
+        }
+        
+        if check && defaults.bool(forKey: "Congrats") != true{
+            defaults.set(true, forKey: "Congrats")
+            pageControl.isHidden = true
+            popup.isHidden = false
+            clearPopup()
+            
+            map.mapView.alpha = 0.5
+            for pin in map.pinList{
+                pin.alpha = 0.7
+            }
+            
+            slideView.contentSize = CGSize(width: view.frame.width, height: view.frame.height - 95)
+            infoSlide.images.image = UIImage(named: "congrat")
+            
+            slideView.addSubview(infoSlide)
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                       self.popup.transform = CGAffineTransform(translationX: 0, y: 0)
+                       self.bottomBar.transform = CGAffineTransform(translationX: 0, y: self.bottomBar.frame.height)
+            })
+        }
+    }
 
     func createSlides(){
         let images: [UIImage] = [#imageLiteral(resourceName: "howTo1"), #imageLiteral(resourceName: "howTo2"), #imageLiteral(resourceName: "howTo3"), #imageLiteral(resourceName: "howTo4")]

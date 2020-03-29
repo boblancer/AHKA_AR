@@ -68,7 +68,7 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
     }
     
     func initPin(){
-        pinList = [cuturalCenter, saoChingcha, visitorCenter, ghostDoor, noName1, coffeeRoasting, holyWell, voodooHub, chiefHub, coffee, skywalk, noName2]
+        pinList = [holyWell, skywalk, coffee, cuturalCenter, saoChingcha,chiefHub, visitorCenter, ghostDoor, coffeeRoasting, noName1, voodooHub, noName2]
         
         textList = [text1, text2, saoChingchaText, cuturalCenterText, ghostDoorText, coffeeText, voodooHubText, chiefHubText, holyWellText, coffeeRoastingText, visitorCenterText]
         
