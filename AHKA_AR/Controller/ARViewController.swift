@@ -83,7 +83,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
                 let s = (imageAnchor!.referenceImage.name)
                 let characterIndex = s![(s!.index(s!.startIndex, offsetBy: 10)..<s!.endIndex)]
                 print("the index is ", characterIndex, ".scn")
-                let characterScn = SCNScene(named: "art.scnassets/Characters/\(characterIndex).scn")
+                let characterScn = SCNScene(named: "art.scnassets/\(characterIndex).scn")
                 let characterNode = characterScn?.rootNode
                 node.addChildNode(characterNode!)
                 self.persistetService.saveBoolean(key: String(characterIndex), value: true)
