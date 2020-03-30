@@ -35,13 +35,13 @@ class VideoController: UIViewController{
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
-        if defaults.bool(forKey: "First Launch5") == true{
+        if defaults.bool(forKey: "First Launch") == true{
             self.performSegue(withIdentifier: "videoToMap", sender: self)
-            defaults.set(true, forKey: "First Launch5")
+            defaults.set(true, forKey: "First Launch")
         }
         else{
             video()
-            defaults.set(true, forKey: "First Launch5")
+            defaults.set(true, forKey: "First Launch")
         }
     }
     
