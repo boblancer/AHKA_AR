@@ -12,8 +12,14 @@ import AVFoundation
 class AudioPlayer{
     var player: AVAudioPlayer?
     func playSound(resourceName: String){
-        let filePath = Bundle.main.path(forResource: resourceName, ofType: "mp3")
-        let url = URL(fileURLWithPath: filePath!)
+        let soundPath:String? = Bundle.main.path(forResource: "sound" + resourceName, ofType: "mp3")
+        print("sound" + resourceName)
+        guard let unwrappedSoundPath = soundPath else {
+            print("Sound path error")
+            return
+        }
+
+        let url = URL(fileURLWithPath: unwrappedSoundPath)
         
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback  , mode: .default)
