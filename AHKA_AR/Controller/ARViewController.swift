@@ -18,6 +18,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     var mainScene: SCNScene!
     var persistetService = PersistentService()
     var customPhotoAlbum = CustomPhotoAlbum()
+    var player = AudioPlayer()
+    var scale = [1,1,1,1,1,1,1,1,1,1,1,1]
+
     
     
     @IBAction func snapshotButtonPressed(_ sender: AnyObject){
@@ -72,6 +75,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
         // Pause the view's session
         sceneView.session.pause()
     }
+    
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
         let imageAnchor = (anchor is ARImageAnchor) ? anchor as? ARImageAnchor : nil
@@ -80,20 +84,22 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
                 //            let plane = SCNPlane(width: 10, height: 10)
                 //            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
                 //            let planeNode = SCNNode(geometry: plane
-                let s = (imageAnchor!.referenceImage.name)
-                let characterIndex = s![(s!.index(s!.startIndex, offsetBy: 10)..<s!.endIndex)]
+                let s = (imageAnchor!.referenceImage.name)!
+                let characterIndex = s[(s.index(s.startIndex, offsetBy: 10)..<s.endIndex)]
                 print("the index is ", characterIndex, ".scn")
                 let characterScn = SCNScene(named: "art.scnassets/\(characterIndex).scn")
                 let characterNode = characterScn?.rootNode
+                let c = (s as NSString).integerValue
+                characterNode?.scale = SCNVector3(c, c, c)
                 node.addChildNode(characterNode!)
                 self.persistetService.saveBoolean(key: String(characterIndex), value: true)
+                self.player.playSound(resourceName: s)
             }
         }
         return node
     }
     
     // MARK: - ARSCNViewDelegate
-    
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
