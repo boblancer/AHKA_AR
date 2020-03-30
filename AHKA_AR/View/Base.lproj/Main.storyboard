@@ -11,7 +11,7 @@
         <!--Video Controller-->
         <scene sceneID="Zrh-TW-VZZ">
             <objects>
-                <viewController id="MEe-7a-YpX" customClass="VideoController" customModule="AHKA_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MEe-7a-YpX" customClass="VideoController" customModule="Day_of_Akha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LUm-R2-ZKi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,7 +102,7 @@
         <!--Map Controller-->
         <scene sceneID="E3m-3A-i7v">
             <objects>
-                <viewController id="f3B-Hh-uUN" customClass="MapController" customModule="AHKA_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="f3B-Hh-uUN" customClass="MapController" customModule="Day_of_Akha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B36-ck-HNs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,9 +131,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="138" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dc-cK-gXF">
-                                                        <rect key="frame" x="56.666666666666657" y="7.6666666666666288" width="25" height="20"/>
+                                                        <rect key="frame" x="56.666666666666657" y="2.6666666666666288" width="25" height="30"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="Jo1-Ix-ypz"/>
+                                                            <constraint firstAttribute="height" constant="30" id="Jo1-Ix-ypz"/>
                                                             <constraint firstAttribute="width" constant="25" id="SZj-e3-HaU"/>
                                                         </constraints>
                                                         <state key="normal" image="icon_?"/>
@@ -151,10 +151,10 @@
                                                 <rect key="frame" x="138" y="0.0" width="138" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTR-Yb-DtM">
-                                                        <rect key="frame" x="44" y="-10" width="50" height="35"/>
+                                                        <rect key="frame" x="41.666666666666657" y="-10" width="55" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="gF7-2O-WGs"/>
-                                                            <constraint firstAttribute="height" constant="35" id="j6Q-s9-DaS"/>
+                                                            <constraint firstAttribute="width" constant="55" id="gF7-2O-WGs"/>
+                                                            <constraint firstAttribute="height" constant="40" id="j6Q-s9-DaS"/>
                                                         </constraints>
                                                         <state key="normal" image="icon_cam2"/>
                                                         <connections>
@@ -164,7 +164,7 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="MTR-Yb-DtM" firstAttribute="top" secondItem="OGW-eh-sBw" secondAttribute="top" constant="-10" id="3zD-ie-7Rk"/>
-                                                    <constraint firstAttribute="bottom" secondItem="MTR-Yb-DtM" secondAttribute="bottom" constant="10" id="UEd-IP-UXC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="MTR-Yb-DtM" secondAttribute="bottom" constant="5" id="UEd-IP-UXC"/>
                                                     <constraint firstItem="MTR-Yb-DtM" firstAttribute="centerX" secondItem="OGW-eh-sBw" secondAttribute="centerX" id="y26-L8-rrB"/>
                                                 </constraints>
                                             </view>
@@ -172,10 +172,10 @@
                                                 <rect key="frame" x="276" y="0.0" width="138" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvW-kX-VlJ">
-                                                        <rect key="frame" x="54" y="5" width="30" height="25"/>
+                                                        <rect key="frame" x="51.666666666666686" y="2.6666666666666288" width="35" height="30"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="25" id="Gd0-Hh-O9i"/>
-                                                            <constraint firstAttribute="width" constant="30" id="ryi-Wo-FvH"/>
+                                                            <constraint firstAttribute="height" constant="30" id="Gd0-Hh-O9i"/>
+                                                            <constraint firstAttribute="width" constant="35" id="ryi-Wo-FvH"/>
                                                         </constraints>
                                                         <state key="normal" image="icon_album"/>
                                                         <connections>
@@ -218,8 +218,8 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKj-dy-W2n">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbm-mV-gwk">
-                                        <rect key="frame" x="0.0" y="20" width="414" height="781"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbm-mV-gwk">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="801"/>
                                     </scrollView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="FjA-Qb-yTI">
                                         <rect key="frame" x="187.66666666666666" y="764" width="39" height="37"/>
@@ -241,7 +241,7 @@
                                     <constraint firstItem="FjA-Qb-yTI" firstAttribute="centerX" secondItem="XKj-dy-W2n" secondAttribute="centerX" id="9hg-5K-wPX"/>
                                     <constraint firstAttribute="bottom" secondItem="FjA-Qb-yTI" secondAttribute="bottom" constant="95" id="Nzq-NK-cpW"/>
                                     <constraint firstAttribute="bottom" secondItem="Xpr-kO-EUO" secondAttribute="bottom" constant="25" id="Xmg-SM-tMO"/>
-                                    <constraint firstItem="Tbm-mV-gwk" firstAttribute="top" secondItem="XKj-dy-W2n" secondAttribute="top" constant="20" id="eDy-1a-VAB"/>
+                                    <constraint firstItem="Tbm-mV-gwk" firstAttribute="top" secondItem="XKj-dy-W2n" secondAttribute="top" id="eDy-1a-VAB"/>
                                     <constraint firstAttribute="bottom" secondItem="Tbm-mV-gwk" secondAttribute="bottom" constant="95" id="hWA-w1-SoJ"/>
                                     <constraint firstItem="Xpr-kO-EUO" firstAttribute="centerX" secondItem="XKj-dy-W2n" secondAttribute="centerX" id="lfA-fp-amm"/>
                                     <constraint firstAttribute="trailing" secondItem="Tbm-mV-gwk" secondAttribute="trailing" id="n9D-HA-wop"/>
@@ -281,7 +281,7 @@
         <!--Album View Controller-->
         <scene sceneID="Qnh-ep-loH">
             <objects>
-                <collectionViewController id="5sY-v5-v4L" customClass="AlbumViewController" customModule="AHKA_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="5sY-v5-v4L" customClass="AlbumViewController" customModule="Day_of_Akha" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="VAk-gt-ox4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,7 +327,7 @@
         <!--View Controller-->
         <scene sceneID="Qya-1c-uKW">
             <objects>
-                <viewController id="jdg-i0-cvm" customClass="ARViewController" customModule="AHKA_AR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jdg-i0-cvm" customClass="ARViewController" customModule="Day_of_Akha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BRI-eM-Kv8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -457,18 +457,18 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Myr-bi-bew"/>
+        <segue reference="el4-Wu-ekN"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="INTRO button-1" width="250" height="313"/>
         <image name="INTRO button-2" width="250" height="313"/>
         <image name="INTRO button-3" width="1625" height="1626"/>
         <image name="base" width="751" height="166"/>
-        <image name="icon_?" width="43" height="59"/>
-        <image name="icon_album" width="81" height="59"/>
-        <image name="icon_cam2" width="77" height="56"/>
+        <image name="icon_?" width="180" height="244"/>
+        <image name="icon_album" width="338" height="244"/>
+        <image name="icon_cam2" width="319" height="233"/>
         <image name="icon_close" width="167" height="162"/>
-        <image name="icon_home2" width="85" height="59"/>
-        <image name="icon_photo" width="102" height="102"/>
+        <image name="icon_home2" width="356" height="244"/>
+        <image name="icon_photo" width="426" height="426"/>
     </resources>
 </document>

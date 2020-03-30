@@ -79,7 +79,6 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
         textList2 = [text3, text4, skywalkText]
         
         for index in 0...11{
-            print(index, defaults.bool(forKey: pinKeyList[index]))
             if defaults.bool(forKey: pinKeyList[index]) == true{
                 let imageTitle = foundPinList[index] + "Found"
                 if let image = UIImage(named: imageTitle) {
@@ -92,7 +91,7 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
     }
     
     @IBAction func pinPressed(_ sender: UIButton) {
-        let imageTitle = sender.accessibilityIdentifier! + "Info"
+        let imageTitle = sender.accessibilityIdentifier! + "FoundInfo"
         self.delegate?.pinIsPressed(self, imageTitle)
         
         

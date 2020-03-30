@@ -66,7 +66,7 @@
 		F559F3F6243178A400156ADC /* sound02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound02.mp3; sourceTree = "<group>"; };
 		F559F3F7243178A400156ADC /* sound07.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound07.mp3; sourceTree = "<group>"; };
 		F559F3F8243178A400156ADC /* sound06.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound06.mp3; sourceTree = "<group>"; };
-		F5E6164823E5C78A009893D3 /* AHKA_AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AHKA_AR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5E6164823E5C78A009893D3 /* Day of Akha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Day of Akha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E6164B23E5C78A009893D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5E6164D23E5C78A009893D3 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		F5E6165223E5C78A009893D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		F5E6164923E5C78A009893D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F5E6164823E5C78A009893D3 /* AHKA_AR.app */,
+				F5E6164823E5C78A009893D3 /* Day of Akha.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,7 +188,7 @@
 			);
 			name = AHKA_AR;
 			productName = AHKA_AR;
-			productReference = F5E6164823E5C78A009893D3 /* AHKA_AR.app */;
+			productReference = F5E6164823E5C78A009893D3 /* Day of Akha.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -422,7 +422,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "bbbkkk.AHKA-AR";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Day of Akha";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -440,7 +440,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "bbbkkk.AHKA-AR";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Day of Akha";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

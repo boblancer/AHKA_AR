@@ -71,12 +71,7 @@ class VideoController: UIViewController{
         case 0:
             player?.seek(to: CMTime.init(seconds: 12, preferredTimescale: 1))
         case 1:
-            player?.seek(to: CMTime.init(seconds: 29, preferredTimescale: 1))
-        case 2:
-            player?.seek(to: CMTime.init(seconds: 36.19, preferredTimescale: 1))
-            player?.pause()
-            startButton.isHidden = false
-            realStartButton.isHidden = false
+            player?.seek(to: CMTime.init(seconds: 28, preferredTimescale: 1))
         default:
             break
         }
@@ -100,25 +95,19 @@ class VideoController: UIViewController{
                 videoIndex = 1
                 skipButtonYellow.isHidden = false
                 skipButtonBlack.isHidden = true
-            case 15...28:
+            case 15...27:
                 skipButtonYellow.isHidden = true
                 skipButtonBlack.isHidden = true
-            case 29...31:
+            case 28...35:
                 videoIndex = 2
                 skipButtonYellow.isHidden = true
-                skipButtonBlack.isHidden = false
-            case 32...34:
-                skipButtonYellow.isHidden = true
                 skipButtonBlack.isHidden = true
-            case 35...37:
-                skipButtonBlack.isHidden = true
-                skipButtonYellow.isHidden = true
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.19) {
+            case 36:
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
                     if self.timer != nil{
                         self.timer!.invalidate()
                         self.timer = nil
                     }
-                    self.player?.pause()
                     self.startButton.isHidden = false
                     self.realStartButton.isHidden = false
 
@@ -151,7 +140,6 @@ class VideoController: UIViewController{
             if timer != nil {
                 timer?.invalidate()
                 startButton.isHidden = true
-                player?.play()
             }
         }
     }
@@ -159,8 +147,10 @@ class VideoController: UIViewController{
     @IBAction func startButtonPressed(_ sender: UIButton) {
         if timer != nil {
             timer?.invalidate()
+            player?.pause()
             startButton.isHidden = true
-            player?.play()
+            self.performSegue(withIdentifier: "videoToMap", sender: self)
+
         }
     }
  
