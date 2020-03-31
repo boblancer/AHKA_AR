@@ -16,6 +16,10 @@ protocol PinDelegate {
 class MapCell: UICollectionViewCell, UIScrollViewDelegate {
     
     var delegate: PinDelegate?
+    let pinKeyList = ["01" ,"02" ,"03" ,"04" ,"05" ,"06" ,"07" ,"08" ,"09" ,"10" ,"11" ,"12"]
+    let foundPinList = ["holyWell" ,"skywalk" ,"noName2" ,"coffee" ,"voodooHub","cuturalCenter" ,"noName1" ,"visitorCenter" ,"chiefHub","saoChingcha" ,"coffeeRoasting" ,"ghostDoor"]
+    let defaults = UserDefaults.standard
+
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mapView: UIImageView!
@@ -68,11 +72,21 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
     }
     
     func initPin(){
-        pinList = [holyWell, skywalk, coffee, cuturalCenter, saoChingcha,chiefHub, visitorCenter, ghostDoor, coffeeRoasting, noName1, voodooHub, noName2]
+        pinList = [holyWell, skywalk, noName2, coffee, voodooHub, cuturalCenter, noName1, visitorCenter, chiefHub, saoChingcha, coffeeRoasting, ghostDoor]
         
         textList = [text1, text2, saoChingchaText, cuturalCenterText, ghostDoorText, coffeeText, voodooHubText, chiefHubText, holyWellText, coffeeRoastingText, visitorCenterText]
         
         textList2 = [text3, text4, skywalkText]
+        
+        for index in 0...11{
+            if defaults.bool(forKey: pinKeyList[index]) == true{
+                let imageTitle = foundPinList[index] + "Found"
+                if let image = UIImage(named: imageTitle) {
+                    pinList[index].setImage(image, for: .normal)
+                    pinList[index].accessibilityIdentifier = imageTitle
+                }
+            }
+        }
         
     }
     

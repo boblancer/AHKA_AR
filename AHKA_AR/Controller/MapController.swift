@@ -17,7 +17,8 @@ class MapController: UIViewController, PinDelegate{
     
     let infoSlide:HowToSlide = Bundle.main.loadNibNamed("HowToSlide", owner: self, options: nil)?.first as! HowToSlide
     let pinKeyList = ["01" ,"02" ,"03" ,"04" ,"05" ,"06" ,"07" ,"08" ,"09" ,"10" ,"11" ,"12"]
-    let foundPinList = ["holywell" ,"skywalk" ,"coffee" ,"cuturalCenter" ,"saoChingcha","chiefHub" ,"visitorCenter" ,"ghostDoor" ,"coffeeRoasting","noName1" ,"voodooHub" ,"noName2"]
+
+    let foundPinList = ["holyWell" ,"skywalk" ,"noName2" ,"coffee" ,"voodooHub","cuturalCenter" ,"noName1" ,"visitorCenter" ,"chiefHub","saoChingcha" ,"coffeeRoasting" ,"ghostDoor"]
     let defaults = UserDefaults.standard
 
     var howToSlides: [HowToSlide] = []
@@ -28,14 +29,13 @@ class MapController: UIViewController, PinDelegate{
         popup.isHidden = false
         slideView.delegate = self
         infoSlide.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 95)
-        
+
         mapView.dataSource = self
         mapView.delegate = self
         mapView.isPagingEnabled = true
         mapView.register(UINib(nibName: "MapCell", bundle: nil), forCellWithReuseIdentifier: "MapCell")
         mapView.reloadData()
         
-        createSlides()
         
         UIView.animate(withDuration: 0, delay: 0, usingSpringWithDamping: 0, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
             self.popup.transform = CGAffineTransform(translationX: 0, y: self.popup.frame.height)
@@ -47,46 +47,57 @@ class MapController: UIViewController, PinDelegate{
         super.viewWillAppear(animated)
         
         var check = true
-        
-        for index in 0...11{
-            if defaults.bool(forKey: pinKeyList[index]) == true{
-                let imageTitle = foundPinList[index] + "Found"
-                map.pinList[index].imageView?.image = UIImage(named: imageTitle)
+        if map.pinList.count == 12{
+            for index in 0...11{
+                if defaults.bool(forKey: pinKeyList[index]) == true{
+                    let imageTitle = foundPinList[index]
+                    if let image = UIImage(named: imageTitle) {
+                        map.pinList[index].setImage(image, for: .normal)
+                        map.pinList[index].accessibilityIdentifier = imageTitle+"Found"
+                    }
+                }
+                else{
+                    check = false
+                }
             }
-            else{
-                check = false
+            
+            if check && defaults.bool(forKey: "Congrats") != true{
+                defaults.set(true, forKey: "Congrats")
+                pageControl.isHidden = true
+                popup.isHidden = false
+                clearPopup()
+                
+                map.mapView.alpha = 0.5
+                for pin in map.pinList{
+                    pin.alpha = 0.7
+                }
+                
+                slideView.contentSize = CGSize(width: view.frame.width, height: slideView.frame.height)
+
+
+                infoSlide.images.image = UIImage(named: "congrat")
+                
+                slideView.addSubview(infoSlide)
+                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                           self.popup.transform = CGAffineTransform(translationX: 0, y: 0)
+                           self.bottomBar.transform = CGAffineTransform(translationX: 0, y: self.bottomBar.frame.height)
+                })
             }
         }
-        
-        if check && defaults.bool(forKey: "Congrats") != true{
-            defaults.set(true, forKey: "Congrats")
-            pageControl.isHidden = true
-            popup.isHidden = false
-            clearPopup()
-            
-            map.mapView.alpha = 0.5
-            for pin in map.pinList{
-                pin.alpha = 0.7
-            }
-            
-            slideView.contentSize = CGSize(width: view.frame.width, height: view.frame.height - 95)
-            infoSlide.images.image = UIImage(named: "congrat")
-            
-            slideView.addSubview(infoSlide)
-            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-                       self.popup.transform = CGAffineTransform(translationX: 0, y: 0)
-                       self.bottomBar.transform = CGAffineTransform(translationX: 0, y: self.bottomBar.frame.height)
-            })
-        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        createSlides()
     }
 
     func createSlides(){
-        let images: [UIImage] = [#imageLiteral(resourceName: "howTo1"), #imageLiteral(resourceName: "howTo2"), #imageLiteral(resourceName: "howTo3"), #imageLiteral(resourceName: "howTo4")]
+        let images: [UIImage] = [#imageLiteral(resourceName: "howTo3"),#imageLiteral(resourceName: "howTo1"), #imageLiteral(resourceName: "howTo2"), #imageLiteral(resourceName: "howTo4")]
         
         for i in 0..<images.count{
             let howTo:HowToSlide = Bundle.main.loadNibNamed("HowToSlide", owner: self, options: nil)?.first as! HowToSlide
             howTo.images.image = images[i]
-            howTo.frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height - 95)
+            howTo.frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: slideView.frame.height)
             howToSlides.append(howTo)
         }
     }
@@ -116,7 +127,6 @@ class MapController: UIViewController, PinDelegate{
         popup.isHidden = false
 
         clearPopup()
-//        pageControl.currentPage = 0
         pageControl.numberOfPages = 4
         pageControl.isHidden = false
         map.mapView.alpha = 0.5
@@ -124,8 +134,8 @@ class MapController: UIViewController, PinDelegate{
         for pin in map.pinList{
             pin.alpha = 0.7
         }
-        
-        slideView.contentSize = CGSize(width: view.frame.width * 4, height: view.frame.height - 95)
+
+        slideView.contentSize = CGSize(width: view.frame.width * 4, height: slideView.frame.height)
         for howto in howToSlides{
             slideView.addSubview(howto)
         }
@@ -148,8 +158,10 @@ class MapController: UIViewController, PinDelegate{
             pin.alpha = 0.7
         }
         
-        slideView.contentSize = CGSize(width: view.frame.width, height: view.frame.height - 95)
-        infoSlide.images.image = UIImage(named: imageTitle)
+        slideView.contentSize = CGSize(width: view.frame.width, height: slideView.frame.height)
+        if let image = UIImage(named: imageTitle){
+            infoSlide.images.image = image
+        }
         
         slideView.addSubview(infoSlide)
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
@@ -157,6 +169,8 @@ class MapController: UIViewController, PinDelegate{
                    self.bottomBar.transform = CGAffineTransform(translationX: 0, y: self.bottomBar.frame.height)
         })
     }
+    
+    
     
 }
 

@@ -13,12 +13,14 @@ import UIKit
 
 class CustomPhotoAlbum {
     
-    static let albumName = "AHKA_AR"
+    static let albumName = "AHKA AR"
     static let sharedInstance = CustomPhotoAlbum()
     var manager = PHImageManager.default()
     var assetCollection: PHAssetCollection!
     
     var smartAlbums: PHFetchResult<PHAssetCollection>!
+    var persistentService = PersistentService()
+
     init() {
         
         func fetchAssetCollectionForAlbum() -> PHAssetCollection! {
@@ -36,14 +38,18 @@ class CustomPhotoAlbum {
         
         if let assetCollection = fetchAssetCollectionForAlbum() {
             self.assetCollection = assetCollection
+            print(persistentService.getAlbumReference(), "\nfound ref")
             return
         }
-        
+        print("requesting asset creation")
         PHPhotoLibrary.shared().performChanges({
             PHAssetCollectionChangeRequest.creationRequestForAssetCollection(withTitle: CustomPhotoAlbum.albumName)
         }) { success, _ in
             if success {
                 self.assetCollection = fetchAssetCollectionForAlbum()
+                self.persistentService.saveAlbumReference(value: self.assetCollection!.localIdentifier)
+                print(self.assetCollection.localIdentifier)
+    
             }
         }
     }
@@ -53,7 +59,8 @@ class CustomPhotoAlbum {
         let fetchOptions = PHFetchOptions()
 //        fetchOptions.predicate = NSPredicate(format: "title = %@", CustomPhotoAlbum.albumName)
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        let results: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+
+        let results: PHFetchResult = PHAsset.fetchAssets(in: self.assetCollection, options: fetchOptions)
         return results
 
     }
