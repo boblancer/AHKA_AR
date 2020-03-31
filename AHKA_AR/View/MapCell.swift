@@ -91,7 +91,7 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
     }
     
     @IBAction func pinPressed(_ sender: UIButton) {
-        let imageTitle = sender.accessibilityIdentifier! + "FoundInfo"
+        let imageTitle = sender.accessibilityIdentifier! + "Info"
         self.delegate?.pinIsPressed(self, imageTitle)
         
         

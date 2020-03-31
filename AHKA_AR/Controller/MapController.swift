@@ -53,7 +53,7 @@ class MapController: UIViewController, PinDelegate{
                     let imageTitle = foundPinList[index]
                     if let image = UIImage(named: imageTitle) {
                         map.pinList[index].setImage(image, for: .normal)
-                        map.pinList[index].accessibilityIdentifier = imageTitle
+                        map.pinList[index].accessibilityIdentifier = imageTitle+"Found"
                     }
                 }
                 else{

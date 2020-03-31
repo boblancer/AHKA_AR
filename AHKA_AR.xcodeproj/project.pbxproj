@@ -158,15 +158,15 @@
 		F5E6164A23E5C78A009893D3 /* AHKA_AR */ = {
 			isa = PBXGroup;
 			children = (
+				F5E6164B23E5C78A009893D3 /* AppDelegate.swift */,
 				C8A4E38B2426811B0046B03D /* Video */,
 				C8C1681723E9444E00537E42 /* Model */,
 				C8C1681523E9443A00537E42 /* View */,
 				C8C1681623E9444200537E42 /* Controller */,
-				F5E6164B23E5C78A009893D3 /* AppDelegate.swift */,
-				F5E6164D23E5C78A009893D3 /* art.scnassets */,
 				F5E6165423E5C78E009893D3 /* Assets.xcassets */,
 				C8B5B3E2242EA8EC0083905F /* Info.plist */,
 				F5E6165623E5C78E009893D3 /* LaunchScreen.storyboard */,
+				F5E6164D23E5C78A009893D3 /* art.scnassets */,
 			);
 			path = AHKA_AR;
 			sourceTree = "<group>";
@@ -415,13 +415,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NK47D3F5VR;
+				DEVELOPMENT_TEAM = 8WWH6VRYYP;
 				INFOPLIST_FILE = AHKA_AR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "bbbkkk.AHKA-AR";
+				PRODUCT_BUNDLE_IDENTIFIER = "ahkateemo.AHKA-AR";
 				PRODUCT_NAME = "Day of Akha";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -433,13 +433,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NK47D3F5VR;
+				DEVELOPMENT_TEAM = 8WWH6VRYYP;
 				INFOPLIST_FILE = AHKA_AR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "bbbkkk.AHKA-AR";
+				PRODUCT_BUNDLE_IDENTIFIER = "ahkateemo.AHKA-AR";
 				PRODUCT_NAME = "Day of Akha";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -16,11 +16,15 @@ class PersistentService{
         defaults.set(value, forKey: key)
         print("\(value) is save for \(key)")
     }
-    func getBooleanValueForKey(key: String) -> Bool{
+    func getBooleanValueForKey(key: String) -> Bool {
         let found = defaults.bool(forKey: key)
         return found
     }
-    func GetAlbumReference(){
-        return
+    func getAlbumReference() -> String {
+        let found = defaults.object(forKey: "ref")
+        return found! as! String
+    }
+    func saveAlbumReference(value: String){
+        defaults.set(value, forKey: "ref")
     }
 }

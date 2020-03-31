@@ -19,7 +19,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     var persistetService = PersistentService()
     var customPhotoAlbum = CustomPhotoAlbum()
     var player = AudioPlayer()
-    var scale = [0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]
+    var scale = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5,0.5, 0.5, 0.5,0.5, 0.5, 0.5 ]
 
     
     
@@ -89,8 +89,9 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
                 print("the index is ", characterIndex, ".scn")
                 let characterScn = SCNScene(named: "art.scnassets/\(characterIndex).scn")
                 let characterNode = characterScn?.rootNode
-                let c = (characterIndex as NSString).integerValue
+                let c = self.scale[(characterIndex as NSString).integerValue - 1]
                 characterNode?.scale = SCNVector3(c, c, c)
+                characterNode?.eulerAngles.x = -.pi/2
                 node.addChildNode(characterNode!)
                 self.persistetService.saveBoolean(key: String(characterIndex), value: true)
                 self.player.playSound(resourceName: String(characterIndex))
