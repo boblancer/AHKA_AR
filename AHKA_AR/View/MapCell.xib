@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,10 +20,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="2393" height="1612"/>
                         <subviews>
                             <view tag="5" contentMode="TopLeft" translatesAutoresizingMaskIntoConstraints="NO" id="cZe-kv-AVH">
-                                <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                <rect key="frame" x="0.0" y="0.0" width="2393" height="1612"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="D0d-aJ-cIE">
-                                        <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="2393" height="1612"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JC-AD-6Y1">
                                         <rect key="frame" x="519" y="475" width="71" height="102"/>
@@ -36,6 +34,16 @@
                                             <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="089-ZZ-L63"/>
                                             <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="cLP-TG-3jy"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="Pga-hG-cov"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNG-7X-Gwi">
+                                        <rect key="frame" x="97" y="86" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="visitorCenter"/>
+                                        <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="gkr-bN-MgY"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="xfL-je-99O"/>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="Ofk-hK-piF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fG-54-Axm">
@@ -49,6 +57,16 @@
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="c6B-Sq-N87"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3G-SH-JoL">
+                                        <rect key="frame" x="1182" y="789" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="voodooHub"/>
+                                        <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="Q5Y-tK-AmD"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="Glr-1a-LBg"/>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="62T-dS-FCE"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTv-BW-nKU">
                                         <rect key="frame" x="1980" y="96" width="71" height="102"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -58,6 +76,16 @@
                                             <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="nEg-k4-Efo"/>
                                             <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="Frn-qy-maM"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="mbO-cm-gI4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euU-ci-uMv">
+                                        <rect key="frame" x="1182" y="789" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="skywalk"/>
+                                        <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="E3D-ec-DSx"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="SVG-T6-Zqh"/>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="5yY-jI-Asl"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlB-kh-2JS">
@@ -71,6 +99,16 @@
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="qHK-qC-8yb"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHq-6E-fhb">
+                                        <rect key="frame" x="1182" y="789" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="saoChingcha"/>
+                                        <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="rnW-zh-NfI"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="pAO-6L-dan"/>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="sAI-dF-WIs"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnK-gc-K7Q">
                                         <rect key="frame" x="2205" y="186" width="71" height="102"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -80,6 +118,16 @@
                                             <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="34R-Nb-2bL"/>
                                             <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="Mfe-Nk-upp"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="yWI-hG-dI0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jct-dd-knJ">
+                                        <rect key="frame" x="1182" y="789" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="noName2"/>
+                                        <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="tor-vo-3X7"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="afO-Np-gJf"/>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="ois-uD-fMP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAo-iO-7Qj">
@@ -93,6 +141,16 @@
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="qTz-0g-QvB"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrA-P0-1Nr">
+                                        <rect key="frame" x="1182" y="789" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="noName1"/>
+                                        <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="Xsm-Ul-diG"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="rj3-wm-ebD"/>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="bRl-I9-U8j"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CpJ-Lj-bpU">
                                         <rect key="frame" x="1186" y="1013" width="71" height="102"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -102,6 +160,16 @@
                                             <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="I3g-fF-mrt"/>
                                             <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="OBo-nN-If7"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="7IF-6C-Qpv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bp0-t7-hgh">
+                                        <rect key="frame" x="1182" y="789" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="holyWell"/>
+                                        <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="Dsf-C5-eyj"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="r3B-bi-V5A"/>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="oa1-Xz-034"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mef-P3-RVv">
@@ -115,6 +183,16 @@
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="8Xb-xu-Ogb"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jh-GY-9tM">
+                                        <rect key="frame" x="1182" y="789" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="coffeeRoasting"/>
+                                        <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="eO4-hZ-eTN"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="XF6-UU-lN4"/>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="otQ-Lh-NXd"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZY-Rk-g2P">
                                         <rect key="frame" x="780" y="202" width="71" height="102"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -124,6 +202,16 @@
                                             <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="e15-y0-8Gh"/>
                                             <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="7oi-aV-51B"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="hSV-KQ-dGw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMl-O6-szB">
+                                        <rect key="frame" x="1182" y="789" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="cuturalCenter"/>
+                                        <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="8qh-XB-4TZ"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="YdC-cY-I9u"/>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="m1E-vL-Ui3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBt-wk-iwM">
@@ -137,6 +225,16 @@
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="reG-T8-yeK"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NE-CQ-zsl">
+                                        <rect key="frame" x="1182" y="789" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="chiefHub"/>
+                                        <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="vKe-X8-zUe"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="hAr-8A-0hh"/>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="m4w-t2-X94"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YO9-bN-g2W">
                                         <rect key="frame" x="1469" y="125" width="71" height="102"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -148,6 +246,16 @@
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="qaE-0q-jIw"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlO-QE-i86">
+                                        <rect key="frame" x="1182" y="789" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="coffee"/>
+                                        <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="eVt-PB-2kn"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="aSk-MZ-Xxp"/>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="eq9-rD-Eox"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ht-cT-mx4">
                                         <rect key="frame" x="984" y="260" width="71" height="102"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -157,6 +265,16 @@
                                             <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="4k8-Yk-62O"/>
                                             <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="A9b-Wa-IQg"/>
                                             <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="U5K-BD-eJs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y63-l3-d1E">
+                                        <rect key="frame" x="1182" y="789" width="30" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ghostDoor"/>
+                                        <connections>
+                                            <action selector="pinIsDragedExit:" destination="uwq-j0-wqF" eventType="touchDragExit" id="SUm-wg-bQQ"/>
+                                            <action selector="pinIsPressing:" destination="uwq-j0-wqF" eventType="touchDown" id="6dp-Bb-JY6"/>
+                                            <action selector="pinPressed:" destination="uwq-j0-wqF" eventType="touchUpInside" id="flY-wG-bcm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPq-Cc-S42">
@@ -275,6 +393,18 @@
                 <outlet property="mapView" destination="D0d-aJ-cIE" id="C4o-Ho-Xre"/>
                 <outlet property="noName1" destination="gAo-iO-7Qj" id="UQe-ic-JGR"/>
                 <outlet property="noName2" destination="KnK-gc-K7Q" id="bVr-qE-7jP"/>
+                <outlet property="realChiefHub" destination="9NE-CQ-zsl" id="i8u-u9-crY"/>
+                <outlet property="realCoffee" destination="SlO-QE-i86" id="LaE-ZV-Tji"/>
+                <outlet property="realCoffeeRoasting" destination="7Jh-GY-9tM" id="xQu-cJ-OAz"/>
+                <outlet property="realCuturalCenter" destination="qMl-O6-szB" id="UcX-d3-34G"/>
+                <outlet property="realGhostDoor" destination="y63-l3-d1E" id="3PB-UO-S0o"/>
+                <outlet property="realHolyWell" destination="bp0-t7-hgh" id="ydE-Yi-X0s"/>
+                <outlet property="realNoName1" destination="CrA-P0-1Nr" id="e8s-W7-PT0"/>
+                <outlet property="realNoName2" destination="Jct-dd-knJ" id="RaV-YM-Gyn"/>
+                <outlet property="realSaoChingcha" destination="LHq-6E-fhb" id="K0k-X5-qcy"/>
+                <outlet property="realSkywalk" destination="euU-ci-uMv" id="740-U6-jVP"/>
+                <outlet property="realVisitorCenter" destination="RNG-7X-Gwi" id="IR9-34-jWw"/>
+                <outlet property="realVoodooHub" destination="W3G-SH-JoL" id="An1-eQ-4XC"/>
                 <outlet property="saoChingcha" destination="wlB-kh-2JS" id="T0h-cu-p56"/>
                 <outlet property="saoChingchaText" destination="S6w-Zt-a3h" id="gcT-6j-uXl"/>
                 <outlet property="scrollView" destination="9cs-zX-osZ" id="2Zw-y5-zJn"/>
@@ -289,7 +419,7 @@
                 <outlet property="voodooHub" destination="0fG-54-Axm" id="8nk-vY-rq6"/>
                 <outlet property="voodooHubText" destination="mCL-tK-DLq" id="4l2-Nj-jFO"/>
             </connections>
-            <point key="canvasLocation" x="1210.144927536232" y="292.63392857142856"/>
+            <point key="canvasLocation" x="1209.4202898550725" y="292.63392857142856"/>
         </collectionViewCell>
     </objects>
     <resources>

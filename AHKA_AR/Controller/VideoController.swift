@@ -46,7 +46,6 @@ class VideoController: UIViewController{
     }
     
     
-    
     func video(){
         let videoString:String? = Bundle.main.path(forResource: "INTRO_final2", ofType: "mp4")
         guard let unwrappedVideoPath = videoString else {return}

@@ -36,6 +36,20 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
     @IBOutlet weak var skywalk: UIButton!
     @IBOutlet weak var noName2: UIButton!
     
+    @IBOutlet weak var realVisitorCenter: UIButton!
+    @IBOutlet weak var realVoodooHub: UIButton!
+    @IBOutlet weak var realSkywalk: UIButton!
+    @IBOutlet weak var realSaoChingcha: UIButton!
+    @IBOutlet weak var realNoName2: UIButton!
+    @IBOutlet weak var realNoName1: UIButton!
+    @IBOutlet weak var realHolyWell: UIButton!
+    @IBOutlet weak var realCoffeeRoasting: UIButton!
+    @IBOutlet weak var realCuturalCenter: UIButton!
+    @IBOutlet weak var realChiefHub: UIButton!
+    @IBOutlet weak var realCoffee: UIButton!
+    @IBOutlet weak var realGhostDoor: UIButton!
+    
+    
 
     
     // resize bottom center
@@ -59,6 +73,8 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
     var textList: [UIButton] = []
     var textList2: [UIButton] = []
     var pinList: [UIButton] = []
+    var realPinList: [UIButton] = []
+
     var textPosition: [UIButton: [CGFloat]] = [:]
     
 
@@ -74,6 +90,8 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
     func initPin(){
         pinList = [holyWell, skywalk, noName2, coffee, voodooHub, cuturalCenter, noName1, visitorCenter, chiefHub, saoChingcha, coffeeRoasting, ghostDoor]
         
+        realPinList = [realHolyWell, realSkywalk, realNoName2, realCoffee, realVoodooHub, realCuturalCenter, realNoName1, realVisitorCenter, realChiefHub, realSaoChingcha, realCoffeeRoasting, realGhostDoor]
+        
         textList = [text1, text2, saoChingchaText, cuturalCenterText, ghostDoorText, coffeeText, voodooHubText, chiefHubText, holyWellText, coffeeRoastingText, visitorCenterText]
         
         textList2 = [text3, text4, skywalkText]
@@ -84,6 +102,7 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
                 if let image = UIImage(named: imageTitle) {
                     pinList[index].setImage(image, for: .normal)
                     pinList[index].accessibilityIdentifier = imageTitle
+                    realPinList[index].accessibilityIdentifier = imageTitle
                 }
             }
         }
@@ -95,30 +114,30 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
         self.delegate?.pinIsPressed(self, imageTitle)
         
         
-        let width = sender.frame.width * 0.8333333
-        let height = sender.frame.height * 0.8333333
-        let x = sender.frame.origin.x + (width * 0.1)
-        let y = sender.frame.origin.y + (height * 0.2)
-        sender.frame = CGRect(x: x , y: y, width: width, height: height)
+//        let width = sender.frame.width * 0.8333333
+//        let height = sender.frame.height * 0.8333333
+//        let x = sender.frame.origin.x + (width * 0.1)
+//        let y = sender.frame.origin.y + (height * 0.2)
+//        sender.frame = CGRect(x: x , y: y, width: width, height: height)
 
     }
     @IBAction func pinIsPressing(_ sender: UIButton) {
-        let difX = sender.frame.width * 0.1
-        let difY = sender.frame.height * 0.2
-        let x = sender.frame.origin.x - difX
-        let y = sender.frame.origin.y - difY
-        let width = sender.frame.width * 1.2
-        let height = sender.frame.height * 1.2
-        sender.frame = CGRect(x: x , y: y, width: width, height: height)
+//        let difX = sender.frame.width * 0.1
+//        let difY = sender.frame.height * 0.2
+//        let x = sender.frame.origin.x - difX
+//        let y = sender.frame.origin.y - difY
+//        let width = sender.frame.width * 1.2
+//        let height = sender.frame.height * 1.2
+//        sender.frame = CGRect(x: x , y: y, width: width, height: height)
     }
     
 
     @IBAction func pinIsDragedExit(_ sender: UIButton) {
-        let width = sender.frame.width * 0.8333333
-        let height = sender.frame.height * 0.8333333
-        let x = sender.frame.origin.x + (width * 0.1)
-        let y = sender.frame.origin.y + (height * 0.2)
-        sender.frame = CGRect(x: x , y: y, width: width, height: height)
+//        let width = sender.frame.width * 0.8333333
+//        let height = sender.frame.height * 0.8333333
+//        let x = sender.frame.origin.x + (width * 0.1)
+//        let y = sender.frame.origin.y + (height * 0.2)
+//        sender.frame = CGRect(x: x , y: y, width: width, height: height)
     }
     
     

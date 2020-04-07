@@ -1,8 +1,8 @@
 {
   "images" : [
     {
+      "filename" : "AR_interface_forprogrammer-center-78.png",
       "idiom" : "universal",
-      "filename" : "voodooHubInfo.png",
       "scale" : "1x"
     },
     {
@@ -15,8 +15,8 @@
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   },
   "properties" : {
     "preserves-vector-representation" : true
