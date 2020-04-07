@@ -10,9 +10,12 @@ import Foundation
 import AVFoundation
 
 class AudioPlayer{
+    
     var player: AVAudioPlayer?
+    var lastPlayed: String?
     func playSound(resourceName: String){
         let soundPath:String? = Bundle.main.path(forResource: "sound" + resourceName, ofType: "mp3")
+        self.lastPlayed = soundPath
         print("sound" + resourceName)
         guard let unwrappedSoundPath = soundPath else {
             print("Sound path error")
@@ -33,5 +36,9 @@ class AudioPlayer{
         catch let error{
             print(error.localizedDescription)
         }
+    }
+    func getDuration() -> Double {
+        let asset = AVURLAsset(url: URL(fileURLWithPath: lastPlayed!))
+        return Double(CMTimeGetSeconds(asset.duration))
     }
 }

@@ -13,7 +13,7 @@ import UIKit
 
 class CustomPhotoAlbum {
     
-    static let albumName = "AHKA AR"
+    static let albumName = "Day in Ahka"
     static let sharedInstance = CustomPhotoAlbum()
     var manager = PHImageManager.default()
     var assetCollection: PHAssetCollection!
@@ -30,7 +30,7 @@ class CustomPhotoAlbum {
             let collection = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: fetchOptions)
             
             if let firstObject: AnyObject = collection.firstObject {
-                return collection.firstObject as? PHAssetCollection
+                return collection.firstObject
             }
             
             return nil

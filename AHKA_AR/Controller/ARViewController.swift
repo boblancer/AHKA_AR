@@ -19,9 +19,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     var persistetService = PersistentService()
     var customPhotoAlbum = CustomPhotoAlbum()
     var player = AudioPlayer()
-    var scale = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5,0.5, 0.5, 0.5,0.5, 0.5, 0.5 ]
-
-    
+    var scale = [0.2, 0.25, 0.24, 0.18, 0.2, 0.08,0.13, 0.15, 0.2,0.18, 0.18, 0.25 ]
     
     @IBAction func snapshotButtonPressed(_ sender: AnyObject){
         image = sceneView.snapshot()
@@ -50,36 +48,33 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
             
         }
         
-        func setUpScene(){
-            let mainScene = SCNScene()
-            sceneView.scene = mainScene
-        }
+    func setUpScene(){
+        let mainScene = SCNScene()
+        sceneView.scene = mainScene
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            
-            // Create a session configuration
-            let configuration = ARWorldTrackingConfiguration()
-            if let detectionImages = ARReferenceImage.referenceImages(inGroupNamed: "ARTarget",
-                                                                      bundle: Bundle.main){
-                configuration.detectionImages = detectionImages
-                configuration.maximumNumberOfTrackedImages = 1
-            }
-            // Run the view's session
-            sceneView.session.run(configuration)
+        // Create a session configuration
+        let configuration = ARWorldTrackingConfiguration()
+        if let detectionImages = ARReferenceImage.referenceImages(inGroupNamed: "ARTarget",
+                                                                  bundle: Bundle.main){
+            configuration.detectionImages = detectionImages
+            configuration.maximumNumberOfTrackedImages = 1
         }
-        
-        override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
-            
-            // Pause the view's session
-            sceneView.session.pause()
-        }
+        // Run the view's session
+        sceneView.session.run(configuration)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
         // Pause the view's session
         sceneView.session.pause()
     }
-    
+
+
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         let node = SCNNode()
         let imageAnchor = (anchor is ARImageAnchor) ? anchor as? ARImageAnchor : nil
@@ -100,29 +95,33 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
                 node.addChildNode(characterNode!)
                 self.persistetService.saveBoolean(key: String(characterIndex), value: true)
                 self.player.playSound(resourceName: String(characterIndex))
+                DispatchQueue.main.asyncAfter(deadline: .now() + self.player.getDuration()) {
+                    print("waiting for", self.player.getDuration())
+                    node.isPaused = true
+                }
             }
-            return node
         }
-        
-        // MARK: - ARSCNViewDelegate
-        
-        func session(_ session: ARSession, didFailWithError error: Error) {
-            // Present an error message to the user
-            
-        }
-        
-        func sessionWasInterrupted(_ session: ARSession) {
-            // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        }
-        
-        func sessionInterruptionEnded(_ session: ARSession) {
-            // Reset tracking and/or remove existing anchors if consistent tracking is required
-            
-        }
-        
-        @IBAction func homeButtonPressed(_ sender: UIButton) {
-            self.dismiss(animated: true, completion: nil)
-        }
-        
+        return node
+
+    }
+    
+    // MARK: - ARSCNViewDelegate
+    
+    func session(_ session: ARSession, didFailWithError error: Error) {
+        // Present an error message to the user
         
     }
+    
+    func sessionWasInterrupted(_ session: ARSession) {
+        // Inform the user that the session has been interrupted, for example, by presenting an overlay
+    }
+    
+    func sessionInterruptionEnded(_ session: ARSession) {
+        // Reset tracking and/or remove existing anchors if consistent tracking is required
+        
+    }
+        
+    @IBAction func homeButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
