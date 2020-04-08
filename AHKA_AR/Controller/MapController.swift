@@ -20,7 +20,8 @@ class MapController: UIViewController, PinDelegate{
     let infoSlide:HowToSlide = Bundle.main.loadNibNamed("HowToSlide", owner: self, options: nil)?.first as! HowToSlide
     let pinKeyList = ["01" ,"02" ,"03" ,"04" ,"05" ,"06" ,"07" ,"08" ,"09" ,"10" ,"11" ,"12"]
     
-    let foundPinList = ["holyWell" ,"skywalk" ,"noName2" ,"coffee" ,"voodooHub","cuturalCenter" ,"noName1" ,"visitorCenter" ,"chiefHub","saoChingcha" ,"coffeeRoasting" ,"ghostDoor"]
+//    let foundPinList = ["holyWell" ,"skywalk" ,"noName2" ,"coffee" ,"voodooHub","cuturalCenter" ,"noName1" ,"visitorCenter" ,"chiefHub","saoChingcha" ,"coffeeRoasting" ,"ghostDoor"]
+    let foundPinList = ["holyWell" ,"skywalk" ,"coffee" ,"cuturalCenter" ,"saoChingcha","chiefHub" ,"visitorCenter" ,"ghostDoor" ,"coffeeRoasting","noName1" ,"voodooHub" ,"noName2"]
     let defaults = UserDefaults.standard
     
     var timer: Timer? = nil
@@ -31,18 +32,20 @@ class MapController: UIViewController, PinDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        defaults.set(true, forKey: "01")
-//        defaults.set(true, forKey: "02")
-//        defaults.set(true, forKey: "03")
-//        defaults.set(true, forKey: "04")
-//        defaults.set(true, forKey: "05")
-//        defaults.set(true, forKey: "06")
-//        defaults.set(true, forKey: "07")
-//        defaults.set(true, forKey: "08")
-//        defaults.set(true, forKey: "09")
-//        defaults.set(true, forKey: "10")
-//        defaults.set(true, forKey: "11")
-//        defaults.set(true, forKey: "12")
+        defaults.set(false, forKey: "01")
+        defaults.set(false, forKey: "02")
+        defaults.set(false, forKey: "03")
+        defaults.set(false, forKey: "04")
+        defaults.set(false, forKey: "05")
+        defaults.set(false, forKey: "06")
+        defaults.set(false, forKey: "07")
+        defaults.set(false, forKey: "08")
+        defaults.set(false, forKey: "09")
+        defaults.set(false, forKey: "10")
+        defaults.set(false, forKey: "11")
+        defaults.set(false, forKey: "12")
+
+
         playSound()
         popup.isHidden = false
         slideView.delegate = self
@@ -57,7 +60,7 @@ class MapController: UIViewController, PinDelegate{
         UIView.animate(withDuration: 0, delay: 0, usingSpringWithDamping: 0, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
             self.popup.transform = CGAffineTransform(translationX: 0, y: self.popup.frame.height)
         })
-        print(defaults.bool(forKey: "Congrats"))
+
         if timer == nil && defaults.bool(forKey: "Congrats") != true{
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(bouncePins), userInfo: nil, repeats: true)
         }
@@ -85,7 +88,8 @@ class MapController: UIViewController, PinDelegate{
                     let imageTitle = foundPinList[index] + "Found"
                     if let image = UIImage(named: imageTitle) {
                         map.pinList[index].setImage(image, for: .normal)
-                        map.pinList[index].accessibilityIdentifier = imageTitle+"Found"
+                        map.pinList[index].accessibilityIdentifier = imageTitle
+                        map.realPinList[index].accessibilityIdentifier = imageTitle
                     }
                 }
                 else{
@@ -243,7 +247,7 @@ class MapController: UIViewController, PinDelegate{
     }
     
     func pinIsPressed(_ mapCell: MapCell, _ imageTitle : String){
-        
+        print(imageTitle)
         pageControl.isHidden = true
         popup.isHidden = false
         clearPopup()

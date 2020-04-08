@@ -437,13 +437,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8WWH6VRYYP;
+				DEVELOPMENT_TEAM = NK47D3F5VR;
 				INFOPLIST_FILE = AHKA_AR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ahka.DayInAhka;
+				PRODUCT_BUNDLE_IDENTIFIER = commmm.ahka.DayInAhka;
 				PRODUCT_NAME = "Day of Akha";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -455,13 +455,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8WWH6VRYYP;
+				DEVELOPMENT_TEAM = NK47D3F5VR;
 				INFOPLIST_FILE = AHKA_AR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ahka.DayInAhka;
+				PRODUCT_BUNDLE_IDENTIFIER = commmm.ahka.DayInAhka;
 				PRODUCT_NAME = "Day of Akha";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

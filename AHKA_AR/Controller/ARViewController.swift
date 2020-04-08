@@ -93,6 +93,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
                 characterNode?.scale = SCNVector3(c, c, c)
                 characterNode?.eulerAngles.x = -.pi/2
                 node.addChildNode(characterNode!)
+                print(characterIndex)
                 self.persistetService.saveBoolean(key: String(characterIndex), value: true)
                 self.player.playSound(resourceName: String(characterIndex))
                 DispatchQueue.main.asyncAfter(deadline: .now() + self.player.getDuration()) {
