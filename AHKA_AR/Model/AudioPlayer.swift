@@ -41,4 +41,11 @@ class AudioPlayer{
         let asset = AVURLAsset(url: URL(fileURLWithPath: lastPlayed!))
         return Double(CMTimeGetSeconds(asset.duration))
     }
+    
+    func invalidate(){
+        if player != nil{
+            player?.pause()
+            player = nil
+        }
+    }
 }

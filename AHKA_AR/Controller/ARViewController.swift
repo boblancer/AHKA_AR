@@ -72,6 +72,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
         
         // Pause the view's session
         sceneView.session.pause()
+        player.invalidate()
+        
     }
 
 
