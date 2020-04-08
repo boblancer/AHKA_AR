@@ -91,6 +91,30 @@ class MapController: UIViewController, PinDelegate{
                         map.pinList[index].accessibilityIdentifier = imageTitle
                         map.realPinList[index].accessibilityIdentifier = imageTitle
                     }
+                    
+                    if map.justFound.contains(pinKeyList[index]) == false{
+                        map.justFound.append(pinKeyList[index])
+                        pageControl.isHidden = true
+                        popup.isHidden = false
+                        clearPopup()
+                        
+                        map.mapView.alpha = 0.5
+                        for pin in map.pinList{
+                            pin.alpha = 0.7
+                        }
+                        
+                        slideView.contentSize = CGSize(width: view.frame.width, height: slideView.frame.height)
+                        
+                        if let image = UIImage(named: foundPinList[index] + "FoundInfo"){
+                            infoSlide.images.image = image
+                        }
+                        
+                        slideView.addSubview(infoSlide)
+                        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                            self.popup.transform = CGAffineTransform(translationX: 0, y: 0)
+                            self.bottomBar.transform = CGAffineTransform(translationX: 0, y: self.bottomBar.frame.height)
+                        })
+                    }
                 }
                 else{
                     check = false
@@ -247,7 +271,6 @@ class MapController: UIViewController, PinDelegate{
     }
     
     func pinIsPressed(_ mapCell: MapCell, _ imageTitle : String){
-        print(imageTitle)
         pageControl.isHidden = true
         popup.isHidden = false
         clearPopup()
