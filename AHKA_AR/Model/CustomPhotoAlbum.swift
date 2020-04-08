@@ -13,7 +13,7 @@ import UIKit
 
 class CustomPhotoAlbum {
     
-    static let albumName = "Day in Ahka"
+    static let albumName = "Day in Ahka2"
     static let sharedInstance = CustomPhotoAlbum()
     var manager = PHImageManager.default()
     var assetCollection: PHAssetCollection!

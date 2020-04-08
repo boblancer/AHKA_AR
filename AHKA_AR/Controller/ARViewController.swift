@@ -93,7 +93,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
                 let c = self.scale[Int(String(characterIndex))! - 1]
                 print("scale is ", c)
                 characterNode?.scale = SCNVector3(c, c, c)
-                characterNode?.eulerAngles.x = -.pi/2
+//                characterNode?.eulerAngles.x = -.pi/2
                 node.addChildNode(characterNode!)
                 print(characterIndex)
                 self.persistetService.saveBoolean(key: String(characterIndex), value: true)
