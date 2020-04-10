@@ -17,7 +17,7 @@ class MapCell: UICollectionViewCell, UIScrollViewDelegate {
     
     var delegate: PinDelegate?
     let pinKeyList = ["01" ,"02" ,"03" ,"04" ,"05" ,"06" ,"07" ,"08" ,"09" ,"10" ,"11" ,"12"]
-//    let foundPinList = ["holyWell" ,"skywalk" ,"noName2" ,"coffee" ,"voodooHub","cuturalCenter" ,"noName1" ,"visitorCenter" ,"chiefHub","saoChingcha" ,"coffeeRoasting" ,"ghostDoor"]
+
     let foundPinList = ["holyWell" ,"skywalk" ,"coffee" ,"cuturalCenter" ,"saoChingcha","chiefHub" ,"visitorCenter" ,"ghostDoor" ,"coffeeRoasting","noName1" ,"voodooHub" ,"noName2"]
     
     var justFound: [String] = []
