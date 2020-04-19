@@ -31,7 +31,8 @@ class MapController: UIViewController, PinDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         playSound()
         popup.isHidden = false
         slideView.delegate = self
@@ -51,6 +52,8 @@ class MapController: UIViewController, PinDelegate{
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(bouncePins), userInfo: nil, repeats: true)
         }
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -185,7 +188,8 @@ class MapController: UIViewController, PinDelegate{
        
         let url = Bundle.main.url(forResource: "bgsound", withExtension: "mp3")
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setCategory(.soloAmbient, mode: .default)
+//            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             player = try AVAudioPlayer(contentsOf: url!, fileTypeHint: AVFileType.mp3.rawValue)
             guard let player = player else { return }

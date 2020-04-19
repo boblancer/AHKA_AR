@@ -25,7 +25,7 @@ class AudioPlayer{
         let url = URL(fileURLWithPath: unwrappedSoundPath)
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback  , mode: .default)
+            try AVAudioSession.sharedInstance().setCategory(.soloAmbient  , mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
