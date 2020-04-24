@@ -86,7 +86,6 @@ class MapController: UIViewController, PinDelegate{
                         pageControl.isHidden = true
                         popup.isHidden = false
                         clearPopup()
-                        
                         map.mapView.alpha = 0.5
                         for pin in map.pinList{
                             pin.alpha = 0.7
@@ -150,12 +149,11 @@ class MapController: UIViewController, PinDelegate{
   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // 3009 4892
-        
-        
         infoSlide.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: slideView.frame.height)
         
-        createSlides()
+        if howToSlides.isEmpty {
+            createSlides()
+        }
         
         let xRatio: CGFloat = 13 / 167
         let xWidth = view.frame.width / 5
@@ -216,10 +214,14 @@ class MapController: UIViewController, PinDelegate{
     }
     
     func clearPopup(){
+        
         infoSlide.removeFromSuperview()
         for howto in howToSlides{
             howto.removeFromSuperview()
         }
+        
+        
+        
     }
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
@@ -264,7 +266,6 @@ class MapController: UIViewController, PinDelegate{
         pageControl.isHidden = true
         popup.isHidden = false
         clearPopup()
-        
         map.mapView.alpha = 0.5
         for pin in map.pinList{
             pin.alpha = 0.7

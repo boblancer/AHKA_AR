@@ -36,8 +36,8 @@ class VideoController: UIViewController{
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
         if defaults.bool(forKey: "First Launch") == true{
-//            self.performSegue(withIdentifier: "videoToMap", sender: self)
-            proceedWithCameraAccess(identifier: "videoToMap")
+           self.performSegue(withIdentifier: "videoToMap", sender: self)
+            //proceedWithCameraAccess(identifier: "videoToMap")
             defaults.set(true, forKey: "First Launch")
         }
         else{
